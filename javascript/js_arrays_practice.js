@@ -43,8 +43,6 @@ const users = [
 
 // 12. Count how many fruits contain the letter "a" 
 
-// 12b. users 
-
 // 13. Add a new user object to the `users` array 
 
 // 14. Create a new array of user initials (e.g. "A", "B") 
