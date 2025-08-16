@@ -65,7 +65,7 @@ const { wordCount : wordTotal } = article
 
   // Challenge 4: Destructuring with Default Values
   // Given the `article` object, extract the `publishedDate` property. If it doesn't exist, provide a default value of 'Not Published'.
-const
+const {publishedDate = "Not Published"} = article 
 
   // Challenge 5: Nested Object Destructuring
   // From the `user` object, extract the `firstName` and `lastName` from the nested `details` object into their own variables.
