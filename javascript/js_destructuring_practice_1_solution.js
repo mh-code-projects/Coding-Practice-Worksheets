@@ -53,15 +53,19 @@ function getConfig() {
 
   // Challenge 1: Basic Object Destructuring
   // From the `article` object, extract the `title` and `author` properties into their own variables.
+const { title, author } = article
 
   // Challenge 2: Basic Array Destructuring
   // From the `coordinates` array, extract the first two values and assign them to variables named `x` and `y`.
+const [ x , y ]= coordinates;
 
   // Challenge 3: Destructuring with Renaming
   // From the `article` object, extract the `wordCount` and assign it to a new variable called `wordTotal`.
+const { wordCount : wordTotal } = article
 
   // Challenge 4: Destructuring with Default Values
   // Given the `article` object, extract the `publishedDate` property. If it doesn't exist, provide a default value of 'Not Published'.
+const
 
   // Challenge 5: Nested Object Destructuring
   // From the `user` object, extract the `firstName` and `lastName` from the nested `details` object into their own variables.
