@@ -55,7 +55,7 @@
   // 7.  Declare a variable `city` and set it to the name of your city as a string.
   let city = "Columbus, Ohio";
   // 8.  Declare a variable `population` and set it to the population as a number.
-  let population = 900,000;
+  let population = 900000;
   // 9.  Declare a variable `hasPublicTransit` and set it to a boolean.
   let hasPublicTransit = true;
   // 10. Declare a variable `temperatureCelsius` and set it to a number.
@@ -133,28 +133,48 @@
   
   // 1.  Write a function `sayHello` that takes no parameters and returns the string "Hello!".
   function sayHello() {return("Hello!")};
+  
   // 2.  Write a function `doubleNumber` that takes one parameter, `num`, and returns the number multiplied by 2.
   function doubleNumber(num) {return num * 2};
 		//OR 
   const doubleNumberArrow = num => num * 2;
+  
   // 3.  Write a function `isAdult` that takes an `age` parameter and returns `true` if the age is 18 or older, and `false` otherwise.
   function isAdult(age) {return age >= 18};
 		//OR 
   const isAdultArrow = age => age >= 18;
+  
   // 4.  Write a function `getInitials` that takes two parameters, `firstName` and `lastName`, and returns a string with their initials (e.g., "J.D.").
   function getInitials(firstName, lastName) {
 	  return `${firstName[0]}.${lastName[0]}.`; }
 		//OR 
   const getInitialsArrow = (firstName, lastName) => `${firstName[0]}.${lastName[0]}.`;
+  
   // 5.  Write a function `getDiscount` that takes a `price` and `discountPercent` and returns the new price after the discount is applied.
+  function getDiscount(price, discountPercent) {return price - (price * discountPercent)};
+		//OR 
+  const getDiscountArrow = (price, discountPercent) => (price - (price * discountPercent));
   
   // 6.  Write a function `convertFahrenheitToCelsius` that takes one parameter `fahrenheit` and returns the temperature in Celsius. (Hint: Formula is `(F - 32) * 5/9`).
+  function convertFahrenheitToCelsius(f) {
+  return (f - 32) * 5/9};
+		//OR 
+	let convertFahrenheitToCelsiusArrow = (f) => (f-32) * 5/9;
+
   // 7.  Write a function `isLeapYear` that takes a `year` parameter and returns `true` if it's a leap year, and `false` otherwise. (Hint: A leap year is divisible by 4, but not by 100 unless it's also divisible by 400).
+  const isLeapYear = (y) => (y % 4 === 0 &&  y % 100 !== 0) || (y % 400 === 0);
+  console.log(isLeapYear(2004));
+  
   // 8.  Write a function `getGreeting` that takes a `timeOfDay` string and returns a greeting like "Good morning!" or "Good evening!".
+  
   // 9.  Write a function `calculateAverage` that takes three numbers and returns their average.
+  
   // 10. Write a function `getFullName` that takes `firstName`, `middleName`, and `lastName` and returns the full name.
+  
   // 11. Write a function `increaseCounter` that takes one parameter, `count`, and returns the `count` plus 1.
+  
   // 12. Write a function `doubleAndAdd` that takes a number, `num`, doubles it, and then adds 5 to the result before returning it.
+  
   // 13. Write a function `toggleStatus` that takes a boolean parameter, `status`, and returns the opposite boolean value.
 
 
