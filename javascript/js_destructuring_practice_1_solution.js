@@ -70,13 +70,17 @@ const {publishedDate = "Not Published"} = article
   // Challenge 5: Nested Object Destructuring
   // From the `user` object, extract the `firstName` and `lastName` from the nested `details` object into their own variables.
   // Hint: You will need to chain the destructuring syntax.
-
-
+const {details: { firstName : first , lastName : last }} = user
+	
   // Section 4: Advanced Challenges
 
   // Challenge 6: Destructuring Function Parameters
   // Write a function called `printUserDetails` that takes the `user` object as an argument.
   // Use destructuring in the function's parameter list to directly access and log the `username` and `email` properties.
+  function printUserDetails({ username , email }) {
+	  console.log(`username: ${username}, email: ${email}`);
+  }
+  printUserDetails(user)
 
   // Challenge 7: Destructuring with the Rest Operator
   // From the `article` object, destructure the `title` and `author`.

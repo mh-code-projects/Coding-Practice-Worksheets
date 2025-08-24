@@ -20,6 +20,8 @@ const teamInfo = {
 // Render an `<h1>` tag inside the `Greeting` component that says "Hello, [name]!".
 // In App.jsx, render the `Greeting` component and pass it a name of your choice.
 
+
+
 // Challenge 2: Passing a Number Prop
 // Create a component called `TeamStatus` that accepts `teamName` and `memberCount` props.
 // Use the `teamInfo` object from the sample data.
