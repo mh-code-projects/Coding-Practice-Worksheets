@@ -120,6 +120,3 @@ const cities = [
   New Concept: Nested Loops
   A nested loop is a loop inside another loop. The inner loop will execute completely for each single iteration of the outer loop.
 */
-https://www.youtube.com/watch?v=JpTlUCtWrpc
-This video provides additional exercises for practicing for loops in JavaScript.
-http://googleusercontent.com/youtube_content/0
