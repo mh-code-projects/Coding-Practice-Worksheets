@@ -29,6 +29,7 @@ const products = [
 // --- Challenge 1: Finding a Student ---
 // Goal: Find the student with an ID of 3.
 // Remember, `.find()` returns the entire object, not just a value.
+students.find(students.id(3));
 
 // --- Challenge 2: Checking for Existence ---
 // Goal: Check if there is a product with the name "Keyboard".

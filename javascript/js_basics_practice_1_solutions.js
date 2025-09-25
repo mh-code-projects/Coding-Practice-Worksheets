@@ -166,11 +166,26 @@
   console.log(isLeapYear(2004));
   
   // 8.  Write a function `getGreeting` that takes a `timeOfDay` string and returns a greeting like "Good morning!" or "Good evening!".
-  
+  function getGreeting(timeOfDay) {
+    return `Good ${timeOfDay}!`;
+  }
+      //OR 
+  const getGreetingArrow = timeOfDay => `Good ${timeOfDay}!`; 
+
   // 9.  Write a function `calculateAverage` that takes three numbers and returns their average.
-  
+  function calculateAverage(a, b, c) {
+    return (a + b + c) / 3;
+  }
+      //OR 
+  const calculateAverageArrow = (a, b, c) => (a + b + c) / 3;
+
   // 10. Write a function `getFullName` that takes `firstName`, `middleName`, and `lastName` and returns the full name.
-  
+  function getFullName(firstName, middleName, lastName) {
+    return `${firstName} ${middleName} ${lastName}`;
+  }  
+      //OR 
+  const getFullNameArrow = (firstName, middleName, lastName) => `${firstName} ${middleName} ${lastName}`;
+
   // 11. Write a function `increaseCounter` that takes one parameter, `count`, and returns the `count` plus 1.
   
   // 12. Write a function `doubleAndAdd` that takes a number, `num`, doubles it, and then adds 5 to the result before returning it.
