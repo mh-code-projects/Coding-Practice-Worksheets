@@ -63,15 +63,23 @@ const users = [
 
 // Challenge 1:
 // Sort the 'numbers' array in ascending order (smallest to largest).
+let sortedNumbers = numbers.sort((a, b) => a - b);
+console.log(sortedNumbers);
 
 // Challenge 2:
 // Sort the 'fruitBasket' array in alphabetical order.
+let sortedFruit = fruitBasket.sort();
+console.log(sortedFruit);
 
 // Challenge 3:
 // Sort the 'numbers' array in descending order (largest to smallest).
+let descendingNumbers = numbers.sort((a, b) => b - a);
+console.log(descendingNumbers);
 
 // Challenge 4:
 // Sort the 'inventory' array by 'price' in ascending order.
+let sortedInventory = inventory.price.sort((a, b) => a - b);
+console.log(sortedInventory);
 
 // Challenge 5:
 // Sort the 'inventory' array by 'name' in alphabetical order.
