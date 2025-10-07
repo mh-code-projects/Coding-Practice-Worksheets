@@ -46,6 +46,9 @@ const updateDetails = { theme: 'light', lastLogin: new Date().toLocaleDateString
 // 1. Array Concatenation Challenge:
 // Create a new array called 'allColors' that combines 'starterColors', 'rgbColors', and 'primaryColors'.
 // Use the Spread Operator for this.
+const allColors = (starterColors, PrimaryColors, rgbColors) => {
+    
+}
 
 // 2. Array Copying Challenge:
 // Create a new array called 'dessertCopy' that is a **shallow copy** of 'favoriteDessert'.
