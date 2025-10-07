@@ -78,11 +78,23 @@ console.log(descendingNumbers);
 
 // Challenge 4:
 // Sort the 'inventory' array by 'price' in ascending order.
-let sortedInventory = inventory.price.sort((a, b) => a - b);
+let sortedInventoryCopy = [...inventory]
+let sortedInventory = sortedInventoryCopy.sort((a, b) => a.price - b.price);
 console.log(sortedInventory);
 
 // Challenge 5:
 // Sort the 'inventory' array by 'name' in alphabetical order.
+let sortedInventoryCopy2 = [...inventory]
+let alphabeticalInventory = sortedInventoryCopy2.sort((a, b) => {
+		if (a.name < b.name) {
+			return -1;}
+		else if (a.name === b.name) {
+			return 0;}
+		else {
+			return 1;}
+		}
+);
+console.log(alphabeticalInventory);
 
 // Challenge 6:
 // Sort the 'mixedData' array so that all the numbers come first, sorted in ascending order, followed by the strings, sorted alphabetically.
