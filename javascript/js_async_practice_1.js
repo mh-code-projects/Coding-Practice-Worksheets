@@ -67,4 +67,28 @@ Section 3: Challenge Prompts/Questions
 // Challenge 6: Clearing a Timeout (More complex flow control)
 // Task: Define a function named 'cancelWarning' that prints "Warning cleared just in time!" to the console.
 // A) Create a variable named 'warningTimeoutID'.
-// B) Assign the result of a setTimeout call to 'warningTimeoutID'. This timeout
+// B) Assign the result of a setTimeout call to 'warningTimeoutID'. This timeout should print "CRITICAL WARNING!" after 5 seconds.
+// C) Immediately use a **separate** setTimeout call to execute 'cancelWarning' and **clear** the 'warningTimeoutID'. This second timeout should run after only 2 seconds.
+// (If done correctly, you should only see the "Warning cleared..." message, not the "CRITICAL WARNING!").
+
+// Challenge 7: The Flashing Indicator (Self-modifying interval)
+// Task: Create a function named 'flashMessage' that prints "FLASHING" to the console and then uses **setTimeout** inside its own body to call itself again after 500 milliseconds.
+// A) Define the 'flashMessage' function.
+// B) Call 'flashMessage' once to start the chain.
+// HINT: This is an alternative to setInterval, often used for animation, called recursive setTimeout.
+
+// Challenge 8: Stopping the Flashing Indicator
+// Task: Modify the 'flashMessage' function from Challenge 7.
+// A) Before calling the function, declare a counter variable named 'flashCount' and set it to 0.
+// B) Inside 'flashMessage', increment 'flashCount'.
+// C) Add an 'if' statement inside 'flashMessage' that checks if 'flashCount' is greater than 10. If it is, use 'return' to stop the function from calling itself again.
+
+// Challenge 9: Asynchronous Message Queue Setup
+// Task: Add 3 string messages of your choice (e.g., "M1", "M2", "M3") to the 'messageQueue' array using the .push() method.
+
+// Challenge 10: Processing the Queue (Advanced Interval Use Case)
+// Task: Use setInterval() to process the 'messageQueue' array.
+// A) Assign the interval ID to 'queueProcessorID'.
+// B) The interval should run every 1500 milliseconds (1.5 seconds).
+// C) The callback function should use the .shift() method to remove and return the **first** message from the 'messageQueue' array. Print this message to the console.
+// D) Add an 'if' statement to the callback: If the queue is empty (check if the length is 0 after shifting), use clearInterval(queueProcessorID) to stop the process, and print "Queue empty. Processor stopped."
