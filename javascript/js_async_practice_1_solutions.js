@@ -63,14 +63,15 @@ setTimeout(boostScore, 4000);
 // A) The callback function should decrease the global 'countdownValue' by 1 on each call.
 // B) It should print the remaining 'countdownValue' every 1000 milliseconds (1 second).
 // C) Assign the ID returned by setInterval to a variable named 'timerID'.
+let timerID;
 function countDownClock() {
-		countdownValue = countdownValue--;
+		countdownValue--;
 		
 		console.log(countdownValue);
 };
-setInterval(countDownClock, 1000);
 
-let timerID = 
+timerID = setInterval(countDownClock, 1000);
+
 
 // Challenge 4: Stopping the Timer (Using clearInterval)
 // Task: Modify the callback function from Challenge 3.
