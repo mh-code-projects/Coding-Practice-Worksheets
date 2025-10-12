@@ -48,12 +48,16 @@ const searchGrape = searchTerms.includes("grape");
 const findFox = sentence.indexOf("fox");
 
 // Challenge 7: Check if the 'grades' array includes a grade of 100.
+const grade100 = grades.includes(100);
 
 // Challenge 8: Find the index of the name 'Zoe' in the 'students' array.
+const studentZoe = students.indexOf("Zoe");
 
 // Challenge 9: Check if the 'sentence' string includes the word 'lazy'.
+const lazySentence = sentence.includes('lazy');
 
 // Challenge 10: Find the index of the first 'o' in the 'sentence' string.
+const firstO = senetnence.findIndex("O");
 
 // Challenge 11: Check if the 'students' array includes 'Bob'. If it does, find his index.
 
