@@ -60,8 +60,13 @@ const lazySentence = sentence.includes('lazy');
 const firstO = senetnence.findIndex("O");
 
 // Challenge 11: Check if the 'students' array includes 'Bob'. If it does, find his index.
+const bobIndex = students.findIndex(student => student === 'Bob');
 
 // Challenge 12: Find the index of the number 78 in the 'grades' array. If the index is found, check if the 'grades' array includes the number 95.
+const find78 = grades.findIndex(grade => grade === 78);
+if (find78 !== -1) {
+	const find95 = grades.includes(95);
+};
 
 // Challenge 13: Check if the 'sentence' string includes the word 'jumps'. If it does, find the index of the word 'quick'.
 
