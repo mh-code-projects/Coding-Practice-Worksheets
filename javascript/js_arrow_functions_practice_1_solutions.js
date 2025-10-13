@@ -60,6 +60,13 @@ const inventory = [
     { item: "Keyboard", price: 75, quantity: 20 }
 ];
 
+const msg = "This is a test";
+
+const user = [
+	{ name: "Jordan", id: 001 },
+	{ name: "Mike", id: 002 },
+];
+
 /*
 ==================================================
 Section 3: Challenge Prompts/Questions
@@ -73,11 +80,15 @@ function calculateArea(width, height) {
     return width * height;
 }
 
+const calculateAreaArrow = (height, width) => (width * height);
+
 // Prompt 2: Convert the 'isPositive' function into a **concise body** arrow function (omitting {} and 'return').
 // Reminder: This function has only ONE parameter.
 function isPositive(number) {
     return number >= 0;
 }
+
+const isPositiveArrow = (number) => (number >= 0);
 
 // Prompt 3: Convert the 'formatGreeting' function to a standard arrow function.
 // B) This function takes a 'user' object and returns a formatted string.
@@ -85,11 +96,15 @@ function formatGreeting(user) {
     return "Welcome back, " + user.name + "! Your ID is " + user.id + ".";
 }
 
+const formatGreetingArrow = (user) => (`Welcome back, ${user.name}! Your ID id ${user.id}.`);
+
 // Prompt 4: Convert the 'logMessage' function to an arrow function.
 // B) This function takes one parameter and simply logs a message; it does **not** return a value.
 function logMessage(msg) {
     console.log("LOG: " + msg);
 }
+
+const logMessageArrow = (msg) => ("LOG :" + msg);
 
 // Prompt 5: Convert the 'getInventoryCount' function to an arrow function.
 // B) This function takes no parameters and returns the length of the 'inventory' array.

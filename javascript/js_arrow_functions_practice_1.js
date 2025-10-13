@@ -60,6 +60,12 @@ const inventory = [
     { item: "Keyboard", price: 75, quantity: 20 }
 ];
 
+const user = [
+	{ name: "Jordan", id: 001 },
+	{ name: "Mike", id: 002 },
+];
+
+
 /*
 ==================================================
 Section 3: Challenge Prompts/Questions
