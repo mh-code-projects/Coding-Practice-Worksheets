@@ -62,10 +62,12 @@ const inventory = [
 
 const msg = "This is a test";
 
-const user = [
+const users = [
 	{ name: "Jordan", id: 001 },
 	{ name: "Mike", id: 002 },
 ];
+
+const newUser = {name: "Jim", id: 003 };
 
 /*
 ==================================================
@@ -91,12 +93,12 @@ function isPositive(number) {
 const isPositiveArrow = (number) => (number >= 0);
 
 // Prompt 3: Convert the 'formatGreeting' function to a standard arrow function.
-// B) This function takes a 'user' object and returns a formatted string.
-function formatGreeting(user) {
-    return "Welcome back, " + user.name + "! Your ID is " + user.id + ".";
+// B) This function takes a 'users' object and returns a formatted string.
+function formatGreeting(users) {
+    return "Welcome back, " + users.name + "! Your ID is " + users.id + ".";
 }
 
-const formatGreetingArrow = (user) => (`Welcome back, ${user.name}! Your ID id ${user.id}.`);
+const formatGreetingArrow = (user) => (`Welcome back, ${users.name}! Your ID id ${users.id}.`);
 
 // Prompt 4: Convert the 'logMessage' function to an arrow function.
 // B) This function takes one parameter and simply logs a message; it does **not** return a value.
@@ -112,10 +114,16 @@ function getInventoryCount() {
     return inventory.length;
 }
 
+const getInventoryCountArrow = () => (inventory.length);
+
 // --- CONVERSION CHALLENGES (Arrow Function -> Standard Function) ---
 
 // Prompt 6: Convert the 'getFinalPrice' arrow function back into a standard function declaration.
 const getFinalPrice = (base, taxRate) => base * (1 + taxRate);
+
+function getFinalPriceStnd(base, taxRate){
+		return base * (1 + taxRate);
+};
 
 // Prompt 7: Convert the 'addItem' arrow function back into a standard function declaration.
 // B) This function takes an array (arr) and an item (newItem) and pushes the item to the array.
@@ -124,16 +132,35 @@ const addItem = (arr, newItem) => {
     return arr;
 };
 
+function addItemStnd(arr, newItem) {
+		arr.push(newItem);
+		return arr;
+};
+
 // Prompt 8: Convert the 'checkAvailability' arrow function back into a standard function declaration.
 // Reminder: This function takes only ONE parameter.
-const checkAvailability = item => item.quantity > 0;
+const checkAvailability = inventory => inventory.quantity > 0;
+console.log(checkAvailability(inventory[0]));
+
+function checkAvailabilityStnd(inventory) {
+		return inventory.quantity > 0;
+};
 
 // Prompt 9: Convert the 'createTag' arrow function back into a standard function declaration.
 // B) This function returns an object literal. For arrow functions, returning an object literal directly requires parentheses around the object: '() => ({ key: value })'.
 const createTag = (text) => ({ tag: text, created: new Date() });
 
+function createTagStnd(text) {
+	return	({ tag: text, created: new Date() });
+		
+};
+
 // Prompt 10: Convert the 'sumAllItems' arrow function back into a standard function declaration.
 const sumAllItems = (a, b, c) => a + b + c;
+
+function sumAllItemsStnd(a, b, c) {
+	return a + b + c;
+};
 
 // --- APPLICATION CHALLENGES (Formulating New Functions) ---
 
@@ -142,6 +169,23 @@ const sumAllItems = (a, b, c) => a + b + c;
 // C) New Concept: **Array.prototype.find()**: Finds and returns the first element in an array that satisfies a testing function.
 //    Syntax: array.find(callbackFunction)
 //    Example: inventory.find(product => product.item === 'Laptop') // returns the Laptop object
+
+
+const inventory = [
+    { item: "Laptop", price: 1200, quantity: 5 },
+    { item: "Mouse", price: 25, quantity: 50 },
+    { item: "Monitor", price: 300, quantity: 10 },
+    { item: "Keyboard", price: 75, quantity: 20 }
+];
+
+
+function getItemPrice2(inventory, itemName) {
+	let foundItem = inventory.find(inventory => inventory.item === itemName);
+	return foundItem;	
+};
+console.log(getItemPrice2(inventory, "Laptop")); //RETURN PRICE ONLY or ZERO
+
+
 
 // Prompt 12: Convert the 'getItemPrice' function (from Prompt 11) into a concise arrow function and name it 'getItemPriceArrow'.
 

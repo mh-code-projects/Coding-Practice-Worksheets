@@ -60,10 +60,14 @@ const inventory = [
     { item: "Keyboard", price: 75, quantity: 20 }
 ];
 
-const user = [
+const msg = "This is a test";
+
+const users = [
 	{ name: "Jordan", id: 001 },
 	{ name: "Mike", id: 002 },
 ];
+
+const newUser = {name: "Jim", id: 003 };
 
 
 /*
@@ -86,9 +90,9 @@ function isPositive(number) {
 }
 
 // Prompt 3: Convert the 'formatGreeting' function to a standard arrow function.
-// B) This function takes a 'user' object and returns a formatted string.
-function formatGreeting(user) {
-    return "Welcome back, " + user.name + "! Your ID is " + user.id + ".";
+// B) This function takes a 'users' object and returns a formatted string.
+function formatGreeting(users) {
+    return "Welcome back, " + users.name + "! Your ID is " + users.id + ".";
 }
 
 // Prompt 4: Convert the 'logMessage' function to an arrow function.
@@ -117,7 +121,8 @@ const addItem = (arr, newItem) => {
 
 // Prompt 8: Convert the 'checkAvailability' arrow function back into a standard function declaration.
 // Reminder: This function takes only ONE parameter.
-const checkAvailability = item => item.quantity > 0;
+const checkAvailability = inventory => inventory.quantity > 0;
+
 
 // Prompt 9: Convert the 'createTag' arrow function back into a standard function declaration.
 // B) This function returns an object literal. For arrow functions, returning an object literal directly requires parentheses around the object: '() => ({ key: value })'.

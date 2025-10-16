@@ -3,10 +3,81 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			p.red {
+			  color: red;
+			}
+			p.blue {
+			  color: blue;
+			}
+			p.green {
+			  color: green;
+			}
+			p.black {
+			  color: black;
+			}
+			p.purple {
+			  color: purple;
+			}
+			p.pink {
+			  color: pink;
+			}
+		</style>
+	<script >
+		const colorOptions = ["red", "blue", "green", "black", "purple", "pink"];
+		let currentColorIndex = 0;
+	
+		//cycling through colors
+		function clickedButtonThatChangesTextColor() {
+			console.log(currentColorIndex);
+			console.log(colorOptions[currentColorIndex]);
+			
+			textThatChangesColor.classList.remove(colorOptions[currentColorIndex]);			//remove currentColor
+			//iterate to the next color in colorOptions array | 
+			currentColorIndex = (currentColorIndex + 1) % colorOptions.length;
+			
+			textThatChangesColor.classList.add(colorOptions[currentColorIndex]);	//set the next color to currentColor;
+			console.log(currentColorIndex);
+			console.log(colorOptions[currentColorIndex]);
+			};
+
+	
+		//async so the DOM loads before running the script
+		document.addEventListener('DOMContentLoaded', initializeJavaScript);
+		function initializeJavaScript() {
+			//establish the button & text variables from HTML to js
+			const buttonThatChangesTextColor = document.getElementById("buttonThatChangesTextColor");
+			const textThatChangesColor = document.getElementById("textThatChangesColor");
+			//set the button to use the function when clicked
+			buttonThatChangesTextColor.addEventListener("click", clickedButtonThatChangesTextColor);
+			
+
+		
+		};
+		
+
+	
+	
+	</script>
     </head>
+	
+
     <body>
 
         <script src="/javascript/js_for_of_practice_solutions.js"></script>
+		
+		
+		<div>
+			<h4>This section will change text colors</h4>
+		<button type="submit" id="buttonThatChangesTextColor">Change Text Color</button>
+		<!-- <button type="reset">Reset Button</button> -->
+		
+				<p id="textThatChangesColor"> Change this text color</p>
+		</div>
+		
+
+		
+	
 
     </body>
-</html>
+

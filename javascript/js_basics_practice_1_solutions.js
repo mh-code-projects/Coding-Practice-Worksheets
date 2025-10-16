@@ -187,6 +187,11 @@
   const getFullNameArrow = (firstName, middleName, lastName) => `${firstName} ${middleName} ${lastName}`;
 
   // 11. Write a function `increaseCounter` that takes one parameter, `count`, and returns the `count` plus 1.
+function increaseCounter(count) {
+	count++
+	return count;
+}
+console.log(increaseCounter(10));
   
   // 12. Write a function `doubleAndAdd` that takes a number, `num`, doubles it, and then adds 5 to the result before returning it.
   
