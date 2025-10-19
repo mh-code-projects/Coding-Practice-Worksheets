@@ -49,7 +49,7 @@
 		let verb1;	
 		let madLibParagraph;
 		let madLibParagraphCharacter;
-		let madLibParagraphCharacterIndex
+		let madLibParagraphCharacterIndex;
 
 
 	
@@ -95,28 +95,48 @@
 			madLibButton.addEventListener("click", madLibButtonPress);
 			madLibParagraph = document.getElementById("madLibParagraph")
 
-			madLibParagraphTextContent = madLibParagraph.textContent;
-			madLibParagraphTextContent.charAt(madLibParagraphCharacterIndex);
+
 		};
 		
 
 	//madlib capture use rinput and apply function
 		function madLibButtonPress() {
+			madLibParagraphCharacterIndex = 0;
 			noun1.textContent = userNoun1.value;
 			noun2.textContent = userNoun2.value;
 			adjective1.textContent = userAdjective1.value;
 			adjective2.textContent = userAdjective2.value;
 			verb1.textContent = userVerb1.value;
-			madLibParagraphTextContent="";
-			setInterval(typeMadLibParagraph, 1000);
+			//collect final output AFTER user input and BEFORE clearing the field
+			madLibParagraphTextContent = madLibParagraph.textContent;
+			console.log(madLibParagraph.length);
+			console.log(madLibParagraphTextContent.length);
+
+
+
+			//clear the content of the paragraph to begin "typing" the finished madlib
+			madLibParagraph.innerHTML="";
+
+			//Set "typing" visual effect of final madLib
+			setInterval(typeMadLibParagraph, 100);
 			// madLibParagraph.classList.toggle("hidden") 
 		}
 
 		function typeMadLibParagraph() {
-			for (let i = 0, i < madLibParagraph.length; i++) {
-				madLibParagraphCharacterIndex++ ; //count charAt + 1 interval
+			// madLibParagraphTextContent.charAt(madLibParagraphCharacterIndex);		
+			const madLibNextCharacter = madLibParagraphTextContent.CharAt(madLibParagraphCharacterIndex);
+			// madLibParagraphCharacterTextContent = madLibParagraph[madLibParagraphCharacterIndex];
+
+			console.log(madLibParagraphCharacter);
+			console.log(madLibParagraphCharacterIndex);
+			
+			madLibParagraphCharacterIndex++ ; //count charAt + 1 interval
+
+
+				// madLibParagraph.textContent = madLibParagraph.textContent + madLibParagraph[madLibParagraphCharacterIndex];
+	
 			}
-		}
+		
 	
 	</script>
     </head>
