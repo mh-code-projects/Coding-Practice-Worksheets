@@ -15,11 +15,7 @@ function initializeJavaScript() {
     );
 };
 function clickedButtonThatChangesTextColor() {
-    console.log(currentColorIndex);
-    console.log(colorOptions[currentColorIndex]);
     textThatChangesColor.classList.remove(colorOptions[currentColorIndex]); //remove currentColor
     currentColorIndex = (currentColorIndex + 1) % colorOptions.length;
     textThatChangesColor.classList.add(colorOptions[currentColorIndex]); //set the next color to currentColor;
-    console.log(currentColorIndex);
-    console.log(colorOptions[currentColorIndex]);
 }

@@ -43,3 +43,9 @@
       background: #f3f4f6;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
+
+    p.subtitle {
+      color:rgb(114, 114, 114);
+      font-size:smaller;
+      font-style:italic;
+    }
