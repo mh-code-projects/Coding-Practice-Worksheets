@@ -28,13 +28,14 @@
 */
 
 const colors = ["red", "green", "blue", "yellow"];
-const sentence = "The quick brown fox";
+const sentence = "The qUick brown fox";
 const numbers = [10, 25, 40, 55, 70];
 const users = [
-  { name: "Alice", active: true },
-  { name: "Bob", active: false },
-  { name: "Charlie", active: true }
+  { name: "Alice", active: true, score: 82 },
+  { name: "Bob", active: false, score: 94},
+  { name: "Charlie", active: true, score: 71 }
 ];
+
 
 
 /*
@@ -76,4 +77,50 @@ const users = [
 /*
   6. Create a New Array
   Task: Use a for...of loop to create a new array called `doubledNumbers` where each number from the original `numbers` array is multiplied by 2. Print the new array.
+*/
+
+
+/*
+  7. Filter by Score and Activity
+  Task: Create a new array called `topActivePerformers`. Use a for...of loop to iterate through the `users` array and add the user's *name* to the new array ONLY if the user is both `active: true` AND their `score` is greater than 80. Print the final array.
+*/
+
+
+/*
+  8. Reverse a String
+  Task: Create a new, empty string called `reversedSentence`. Use a for...of loop to iterate through the characters of the `sentence` string and build the new string in reverse order. Print the `reversedSentence`.
+  
+  Hint: Think about how you are adding the current character to the new string in each iteration.
+*/
+
+
+/*
+  9. Check for Existence of an Element
+  Task: Use a for...of loop to check if the `colors` array contains the color "blue". Once you confirm it exists, store a boolean value (`true` or `false`) in a variable called `hasBlue` and immediately stop the loop. Print the value of `hasBlue`.
+  
+  Hint: Use a `break` statement to stop the loop early.
+*/
+
+
+/*
+  10. Find the Maximum Number
+  Task: Use a for...of loop to find the largest number in the `numbers` array. Store this value in a variable called `maxNumber`. Print the `maxNumber`.
+  
+  Tip: Start by assuming the first number in the array is the maximum, then compare it with every other number.
+*/
+
+
+/*
+  11. Capitalize Words
+  Task: The `sentence` variable is a string.
+  1) First, you will need to split the `sentence` string into an array of words.
+  2) Then, use a for...of loop on the array of words to create a new array called `capitalizedWords`.
+  3) In the loop, for each word, take the *first letter*, convert it to uppercase, and combine it with the *rest of the word* (which should be converted to lowercase).
+  4) Print the final `capitalizedWords` array.
+  
+  Reference: String Methods
+  - `string.split(separator)`: Splits a string into an array of substrings based on a specified separator. Example: `"hello world".split(" ")` results in `["hello", "world"]`.
+  - `string.toUpperCase()`: Converts a string to uppercase.
+  - `string.toLowerCase()`: Converts a string to lowercase.
+  - `string.slice(startIndex)`: Extracts a section of a string from the `startIndex` to the end. Example: `"apple".slice(1)` results in `"pple"`.
 */

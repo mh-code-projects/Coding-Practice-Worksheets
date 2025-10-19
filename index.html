@@ -22,10 +22,36 @@
 			p.pink {
 			  color: pink;
 			}
+
+			p.hidden {
+				display: none;
+			}
+
 		</style>
 	<script >
 		const colorOptions = ["red", "blue", "green", "black", "purple", "pink"];
 		let currentColorIndex = 0;
+
+		//initialize DOM for madlib
+		let madlibButton;
+		//Input variables
+		let userNoun1;
+		let userNoun2;
+		let userAdjective1;
+		let userAdjective2;
+		let userVerb1;
+
+		//output variables
+		let noun1;
+		let noun2;
+		let adjective1;
+		let adjective2;
+		let verb1;	
+		let madLibParagraph;
+		let madLibParagraphCharacter;
+		let madLibParagraphCharacterIndex
+
+
 	
 		//cycling through colors
 		function clickedButtonThatChangesTextColor() {
@@ -50,13 +76,47 @@
 			const textThatChangesColor = document.getElementById("textThatChangesColor");
 			//set the button to use the function when clicked
 			buttonThatChangesTextColor.addEventListener("click", clickedButtonThatChangesTextColor);
-			
-
 		
+			//initialize DOM for madlib
+			const madlibButton = document.getElementById("madlibButton");
+			//Input variables
+			userNoun1 = document.getElementById("userNoun1");
+			userNoun2 = document.getElementById("userNoun2");
+			userAdjective1 = document.getElementById("userAdjective1");
+			userAdjective2 = document.getElementById("userAdjective2");
+			userVerb1 = document.getElementById("userVerb1");		
+
+			//output variables
+			noun1 = document.getElementById("noun1");
+			noun2 = document.getElementById("noun2");
+			adjective1 = document.getElementById("adjective1");
+			adjective2 = document.getElementById("adjective2");
+			verb1 = document.getElementById("verb1");		
+			madLibButton.addEventListener("click", madLibButtonPress);
+			madLibParagraph = document.getElementById("madLibParagraph")
+
+			madLibParagraphTextContent = madLibParagraph.textContent;
+			madLibParagraphTextContent.charAt(madLibParagraphCharacterIndex);
 		};
 		
 
-	
+	//madlib capture use rinput and apply function
+		function madLibButtonPress() {
+			noun1.textContent = userNoun1.value;
+			noun2.textContent = userNoun2.value;
+			adjective1.textContent = userAdjective1.value;
+			adjective2.textContent = userAdjective2.value;
+			verb1.textContent = userVerb1.value;
+			madLibParagraphTextContent="";
+			setInterval(typeMadLibParagraph, 1000);
+			// madLibParagraph.classList.toggle("hidden") 
+		}
+
+		function typeMadLibParagraph() {
+			for (let i = 0, i < madLibParagraph.length; i++) {
+				madLibParagraphCharacterIndex++ ; //count charAt + 1 interval
+			}
+		}
 	
 	</script>
     </head>
@@ -67,7 +127,7 @@
         <script src="/javascript/js_for_of_practice_solutions.js"></script>
 		
 		
-		<div>
+		<div> 
 			<h4>This section will change text colors</h4>
 		<button type="submit" id="buttonThatChangesTextColor">Change Text Color</button>
 		<!-- <button type="reset">Reset Button</button> -->
@@ -75,6 +135,19 @@
 				<p id="textThatChangesColor"> Change this text color</p>
 		</div>
 		
+		<div>
+			<h4> This section we will create a mad lib</h4>
+			<input id="userNoun1" type="text" value="noun">	<br />
+			<input id="userNoun2" type="text" value="noun">	<br />
+			<input id="userAdjective1" type="text" value="adjective">	<br />
+			<input id="userAdjective2" type="text" value="adjective">	<br />
+			<input id="userVerb1" type="text" value="verb">	<br />
+				<br />
+			<button type="submit" id="madLibButton">MadLib!</button>
+
+			<p class="" id="madLibParagraph">In this story, a <i><span id="noun1">noun</span></i> went on a <i><span id="adjective1">adjective</span></i> adventure. He went on a quest for the <i><span id="adjective2">adjective</span></i> <i><span id="noun2">noun</span></i>. He needed to get it so that he could <i><span id="verb1">verb</span></i>.<br />
+			...Nobody said it was going to be a good mad lab.</p>
+		</div>
 
 		
 	
