@@ -170,22 +170,15 @@ function sumAllItemsStnd(a, b, c) {
 //    Syntax: array.find(callbackFunction)
 //    Example: inventory.find(product => product.item === 'Laptop') // returns the Laptop object
 
-
-const inventory = [
-    { item: "Laptop", price: 1200, quantity: 5 },
-    { item: "Mouse", price: 25, quantity: 50 },
-    { item: "Monitor", price: 300, quantity: 10 },
-    { item: "Keyboard", price: 75, quantity: 20 }
-];
-
-
 function getItemPrice2(inventory, itemName) {
-	let foundItem = inventory.find(inventory => inventory.item === itemName);
-	return foundItem;	
+		let foundItem = inventory.find(inventory => inventory.item === itemName);
+		if (foundItem) {
+			return foundItem.price;
+		} else {
+			return 0;
+		}
+		
 };
-console.log(getItemPrice2(inventory, "Laptop")); //RETURN PRICE ONLY or ZERO
-
-
 
 // Prompt 12: Convert the 'getItemPrice' function (from Prompt 11) into a concise arrow function and name it 'getItemPriceArrow'.
 
