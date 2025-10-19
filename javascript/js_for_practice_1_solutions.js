@@ -72,7 +72,9 @@ for (let i=numbers.length - 1; i >= 0; i--) {
   3. Find a Fruit
   Task: Use a for loop to iterate through the `fruits` array. If you find the fruit "banana", print "Found the banana!" and stop the loop.
 */
-for (let i=0; fruits[i]==="banana"; i++) {
+const fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+
+for (let i=0; fruits[i]!="banana"; i++) {
   console.log('Found the Banana')
 };
 
