@@ -52,14 +52,18 @@ const supportEmail = (customerTier === "Platinum" || customerTier === "Gold") ? 
 // --- Value Calculation within the Ternary ---
 
 // Challenge 3: Dynamic Shipping Cost
-// Task: Calculate the shipping cost.
-// Condition: If 'cartTotal' is greater than 150.00, the shipping is 0. Otherwise, the shipping is 12.50.
+// Task: Calculate the final shipping cost based on the cart total.
+// Condition: If 'cartTotal' is greater than 150.00, the shipping is 0 (free). 
+// Otherwise (if the total is 150.00 or less), the shipping is a $10 base fee plus 5% of the 'cartTotal'.
+// Optionally, use the toFixed method to reatin 2 digits of cents. 
 // Define the variable 'shippingCost' and assign the result.
+const shippingCost = (cartTotal > 150) ? 0: ( 10 + (cartTotal * 0.05)).toFixed(2);
 
 // Challenge 4: Stock Status Calculation
 // Task: Determine the numeric value of stock adjustment.
 // Condition: If 'inventoryLevel' is greater than 20, the adjustment should be -5 (reduce stock). Otherwise, the adjustment should be +10 (restock).
 // Define the variable 'stockAdjustment' and assign the result.
+const stockAdjustment = (inventoryLevel > 20) ? -5 : +10;
 
 // --- Nested Ternaries for Complex Tiers ---
 

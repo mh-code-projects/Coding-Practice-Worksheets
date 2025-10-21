@@ -50,8 +50,10 @@ const processingFee = 5;
 // --- Value Calculation within the Ternary ---
 
 // Challenge 3: Dynamic Shipping Cost
-// Task: Calculate the shipping cost.
-// Condition: If 'cartTotal' is greater than 150.00, the shipping is 0. Otherwise, the shipping is 12.50.
+// Task: Calculate the final shipping cost based on the cart total.
+// Condition: If 'cartTotal' is greater than 150.00, the shipping is 0 (free). 
+// Otherwise (if the total is 150.00 or less), the shipping is a $10 base fee plus 5% of the 'cartTotal'.
+// Optionally, use the toFixed method to reatin 2 digits of cents. 
 // Define the variable 'shippingCost' and assign the result.
 
 // Challenge 4: Stock Status Calculation
