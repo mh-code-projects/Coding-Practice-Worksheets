@@ -106,11 +106,12 @@ const assignedUsername = (userSubmittedName ? userSubmittedName : "Guest User");
 console.log(assignedUsername);
 
 // Challenge 9: Checking for Positive Numbers
-// Task: Assume a variable 'userValue' exists. Use the ternary operator to determine the label.
+// Task: Use the ternary operator to determine the label for userValue.
 // Condition: Check if 'userValue' is greater than 0. If true, the label is "Positive Value". Otherwise, the label is "Non-Positive Value".
 // Define the variable 'userValue' (set it to a number like -5) and then define 'valueLabel' and assign the result.
 
-// --- Complex Final Challenge ---
+let userValue = -5
+const valueLabel = (userValue > 0 ? "Positive Value" : "Negative Value");
 
 /* * Challenge 10: Dynamic Pricing Adjustment
 * Task: Determine the 'shippingCost' based on the 'itemPrice'.
@@ -118,7 +119,8 @@ console.log(assignedUsername);
 * 1. If 'itemPrice' is greater than 150, 'shippingCost' is 0 (Free Shipping).
 * 2. If 'itemPrice' is between 50 and 150 (inclusive), 'shippingCost' is 8.
 * 3. If 'itemPrice' is 50 or less, 'shippingCost' is 5.
-*
 * Hint: Start by checking the highest price threshold first.
 */
-// Define the variable 'shippingCost' and assign the result.
+const itemPrice = 120.00;
+let shippingCost = (itemPrice > 150 ? 0 : (itemPrice >= 50 ? 8 : 5));
+console.log(shippingCost);
