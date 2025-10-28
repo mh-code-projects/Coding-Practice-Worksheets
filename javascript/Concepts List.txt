@@ -1,0 +1,41 @@
+--- React Foundation Pillars ---
+Array Mapping (.map())
+
+Array Reduction (.reduce())
+
+Promises (Asynchronous Flow, .then(), .catch())
+
+ES Modules (import / export, Code Structure)
+
+Classes (OOP, constructor, this, extends)
+
+Nested Data Access (Optional Chaining ?., Nullish Coalescing ??)
+
+--- General JavaScript Concepts  ---
+Conditional Logic (if/else, js_if_practice_1.js, js_if_practice_2.js)
+
+Ternary Operator (js_ternary_operator_practice_1.js)
+
+Looped Iteration (for, for...of, for...in, while, do...while)
+
+Spread and Rest Operators
+
+Destructuring
+
+Type Checking (typeof)
+
+Error Handling (or operator, general debugging)
+
+Recursive Functions
+
+Sorting (.sort())
+
+Finding (e.g., .find(), .indexOf(), .includes())
+
+Basic Array Manipulation (.push(), .pop())
+
+Grouping (.groupBy())
+
+Number Formatting (.toFixed(), Math.floor)
+
+Asynchronous Functions 

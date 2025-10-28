@@ -79,7 +79,6 @@ const inventory = {
 * Challenge 5: Basic Data Validation (Inventory Check)
 * Task: Loop through the keys (property names) of the 'inventory' object. Use 'typeof' to check the type of the VALUE associated with each key.
 * If the value is NOT a "number" (meaning the stock is either a string or null), print: "[Key] requires manual check."
-* Hint: To loop through object keys, use the syntax: 'for (let key in inventory) { ... }'
 */
 
 // Challenge 5 Code Here:

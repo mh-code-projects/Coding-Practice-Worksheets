@@ -27,6 +27,7 @@
 const mixedItems = [
     42, "CodeCoach", true, null, undefined, { name: "Bob" }, [1, 2, 3], function() { return "test"; }
 ];
+
 const inventory = {
     'itemA': 5,
     'itemB': 'out of stock',
@@ -43,35 +44,34 @@ const inventory = {
 * Task: Check the type of the value at index 3 in the 'mixedItems' array. Store the resulting string in a variable called 'typeOfNull'.
 * What type do you expect it to be, and what type does 'typeof' actually return?
 */
-
-// Challenge 1 Code Here:
-
+const typeOfNull = typeof mixedItems[3];
 
 /*
 * Challenge 2: Checking for a Function
 * Task: Use an 'if' statement to check if the item at index 7 in 'mixedItems' is a "function". If it is, print: "Index 7 is executable!"
 */
-
-// Challenge 2 Code Here:
-
+if (typeof mixedItems[7] === "function"){
+	console.log("Index 7 is executable!");
+};
 
 /*
 * Challenge 3: Looping and Counting Primitives
 * Task: Use a 'for' loop to iterate through the 'mixedItems' array. Count how many items are a "string" or a "boolean". Store the final count in a variable called 'primitiveCount'.
 * Hint: Use the Logical OR operator (||) in your 'if' condition.
 */
-
-// Challenge 3 Code Here:
-
+let primitiveCount = 0
+for (let i = 0; i < mixedItems.length; i++) {
+		if (typeof mixedItems[i] === "string" || typeof mixedItems[i] === "boolean") {
+			primitiveCount++;
+	};
+};
 
 /*
 * Challenge 4: Identifying Undefined Variables
 * Task: Check the type of a variable named 'tempVar' which has NOT been declared yet. Store the type in 'typeOfUndeclared'.
 * Goal: See how 'typeof' can check a variable without causing an error, even if the variable doesn't exist.
 */
-
-// Challenge 4 Code Here:
-
+const typeOfUndeclared = typeof tempVar;
 
 // --- Realistic Use Cases ---
 
@@ -79,11 +79,12 @@ const inventory = {
 * Challenge 5: Basic Data Validation (Inventory Check)
 * Task: Loop through the keys (property names) of the 'inventory' object. Use 'typeof' to check the type of the VALUE associated with each key.
 * If the value is NOT a "number" (meaning the stock is either a string or null), print: "[Key] requires manual check."
-* Hint: To loop through object keys, use the syntax: 'for (let key in inventory) { ... }'
 */
-
-// Challenge 5 Code Here:
-
+for (keyValue in inventory) {
+	if (typeof inventory[keyValue] !== "number") {
+		console.log(`${keyValue} requires manual check.`);
+	};
+};
 
 /*
 * Challenge 6: Input Sanitization
@@ -93,16 +94,12 @@ const inventory = {
 * Inside the loop, check the type of 'userInput'. If it is a "string", change the value of 'userInput' to 0 (a default value). Print the final value of 'userInput' in each iteration.
 */
 
-// Challenge 6 Code Here:
 
 
 /*
 * Challenge 7: Building a Typed List
 * Task: Create a new empty array called 'validNumbers'. Loop through 'mixedItems' and use 'typeof' to push ONLY the true "number" types (ignore "object", "string", etc.) into 'validNumbers'.
 */
-
-// Challenge 7 Code Here:
-
 
 /*
 * Challenge 8: Safe Function Execution (The Power of 'typeof')
@@ -113,9 +110,6 @@ const inventory = {
 * - If it is NOT a "function", print: "Error: No valid function provided."
 * Test the function by calling it with both a real function and a string.
 */
-
-// Challenge 8 Code Here:
-
 
 /*
 * Challenge 9: Dealing with the 'Null' Anomaly
