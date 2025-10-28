@@ -82,20 +82,36 @@ for (let i=0; fruits[i]!="banana"; i++) {
   4. Sum of Numbers
   Task: Use a for loop to calculate the sum of all the numbers in the `numbers` array. Print the final sum.
 */
-
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+	sum = sum + numbers[i];
+};
 
 /*
   5. Even or Odd
   Task: Loop through the `numbers` array. For each number, use an `if` statement to check if it's even or odd. Print "[number] is even" or "[number] is odd" accordingly.
 */
-
+for (let i = 0; i < numbers.length; i++) {
+	if (numbers[i] % 2 === 0) {
+		console.log(numbers[i] + " is even");
+	} else {
+		console.log(numbers[i] + " is odd");
+	}
+	// (numbers[i] % 2 === 0) ? console.log(numbers[i] + " is even") : console.log(numbers[i] + " is odd");   //USING TERNIARY
+}
 
 /*
   6. Filter Data
   Task: Loop through the `mixedData` array. Use an `if` statement with the `typeof` operator to check if each item is a number. If it is, print the number to the console.
 */
+const mixedData = [10, "hello", 20, "world", 30];
 
-
+for (let i = 0; i < mixedData.length; i++) {
+	if (mixedData[i].typeof === "number") {
+		console.log(mixedData[i]);
+	};
+}
+ 
 /*
   7. Capitalize Fruits
   Task: Use a for loop to create a new array called `capitalizedFruits` where each fruit name from the `fruits` array is converted to uppercase. Print the new array.
