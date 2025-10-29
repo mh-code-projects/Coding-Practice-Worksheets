@@ -119,7 +119,6 @@ for (user of users) {
 /*
   8. Reverse a String
   Task: Create a new, empty string called `reversedSentence`. Use a for...of loop to iterate through the characters of the `sentence` string and build the new string in reverse order. Print the `reversedSentence`.
-  
   Hint: Think about how you are adding the current character to the new string in each iteration.
 */
 
