@@ -69,7 +69,6 @@ let today = new Date()
 // Reminder: The month is ZERO-INDEXED (0 = January).
 const newYearsDay = new Date(2026, 0, 1);
 
-
 // Prompt 3: Create a variable named 'pastDate' that represents exactly 500,000,000,000 (500 billion) milliseconds after the Unix Epoch (Jan 1, 1970).
 const pastDate = new Date(5000000000000);
 
@@ -78,6 +77,7 @@ const pastDate = new Date(5000000000000);
 const currentYear = today.getFullYear();
 
 // Prompt 5: Create a variable 'currentMonthIndex' and assign it the zero-based month index (0-11) from the 'today' object.
+const currentMonthIndex = today.getMonth();
 
 // Prompt 6: Create a variable 'currentDayNameIndex' and assign it the day of the week index (0-6) from the 'today' object.
 // B) After you've done that, create a variable 'dayNames' as an array of strings: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].
