@@ -82,6 +82,9 @@ const currentMonthIndex = today.getMonth();
 // Prompt 6: Create a variable 'currentDayNameIndex' and assign it the day of the week index (0-6) from the 'today' object.
 // B) After you've done that, create a variable 'dayNames' as an array of strings: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].
 // C) Finally, create a variable 'currentDayName' and use the 'currentDayNameIndex' to retrieve the actual name from the 'dayNames' array.
+const currentDayNameIndex = today.getDay();
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const currentDayName = ???
 
 // Prompt 7: Create a variable 'timeInMilliseconds' and assign it the number of milliseconds that have passed since the Unix Epoch (Jan 1, 1970) up to 'today'.
 
