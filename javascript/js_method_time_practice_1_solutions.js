@@ -63,17 +63,19 @@ Section 3: Challenge Prompts/Questions
 // --- CREATION CHALLENGES (1-3) ---
 
 // Prompt 1: Create a variable named 'today' and initialize it with the current date and time using the Date object constructor.
-let today = 
+let today = new Date()
 
 // Prompt 2: Create a variable named 'newYearsDay' representing January 1st of next year (2026).
 // Reminder: The month is ZERO-INDEXED (0 = January).
+const newYearsDay = new Date(2026, 0, 1);
+
 
 // Prompt 3: Create a variable named 'pastDate' that represents exactly 500,000,000,000 (500 billion) milliseconds after the Unix Epoch (Jan 1, 1970).
+const pastDate = new Date(5000000000000);
 
-// --- EXTRACTION CHALLENGES (Using .get*() Methods) (4-7) ---
 // Use the 'today' variable you created in Prompt 1 for these challenges.
-
 // Prompt 4: Create a variable 'currentYear' and assign it the four-digit year from the 'today' object.
+const currentYear = today.getFullYear();
 
 // Prompt 5: Create a variable 'currentMonthIndex' and assign it the zero-based month index (0-11) from the 'today' object.
 
