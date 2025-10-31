@@ -51,16 +51,31 @@ const errorCode = 404;              // Common HTTP error codes: 200, 401, 403, 4
 // Goal: Convert the numeric day (currentDayNumber) into its name.
 // Prompt: Create a switch statement for 'currentDayNumber'. Set a variable 'dayName'
 // to the correct day name (1="Monday", 7="Sunday"). Default should be "Invalid Day Number".
+let dayName = "";
 switch (currentDayNumber) {
   case 0:
-    console.log('Sunday');
+    dayName = "Sunday";
     break;
   case 1:
-    console.log('Monday');
+    dayName = "Monday";
     break;
   case 2:
-    
-
+    dayName = "Tuesday";
+    break;
+  case 3:
+    dayName = "Wednesday";
+    break;
+  case 4:
+    dayName = "Thursday";
+    break;
+  case 5:
+    dayName = "Friday";
+    break;
+  case 6:
+    dayName = "Saturday"
+    break;
+  default:
+    dayName = "That is not a valid day";
 }
 
 // --- Challenge 2: Handling Multiple Cases Together (Access Levels) ---
@@ -70,6 +85,26 @@ switch (currentDayNumber) {
 // - "user": "Limited Read/Write Access"
 // - "guest", "viewer": "Read-Only Access" (Use fall-through)
 // - default: "No Defined Access"
+let accessLevel = "";
+switch{
+case admin:
+  accessLevel = "Full Write Access";
+  break;
+case editor:
+  accessLevel = "Full Write Access";
+  break;
+case user:
+  accessLevel = "Limited Read/Write access";
+  break;
+case guest:
+  accessLevel = "Read-Only Access"
+  break;
+case viewer:
+  accessLevel = "Read-Only Access";
+  break;
+case default:
+  accessLevel = "No defined Access";
+}
 
 // --- Challenge 3: Unit Conversion (Executing Logic) ---
 // Goal: Determine the logic required for a temperature conversion based on 'temperatureUnit'.
