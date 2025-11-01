@@ -39,10 +39,17 @@ SECTION 2: Challenge Prompts
 1) Create a new array of user names who are active customers.
    Must be formatted in alphabetical order.
 */
+const activeCustomers = []
+for (let i=0; i < users.length; i++) { 
+  if (users[i].active === true) {
+    activeCustomers.push(users[i].name);
+    activeCustomers.sort();
+    };}
 
 /*
 2) Calculate the total revenue from all user purchases combined.
 */
+
 
 /*
 3) Return the highest priced product using array iteration and comparison logic.

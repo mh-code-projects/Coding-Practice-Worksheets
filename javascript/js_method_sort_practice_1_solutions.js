@@ -94,7 +94,6 @@ let alphabeticalInventory = sortedInventoryCopy2.sort((a, b) => {
 			return 1;}
 		}
 );
-console.log(alphabeticalInventory);
 
 // Challenge 6:
 // Sort the 'mixedData' array so that all the numbers come first, sorted in ascending order, followed by the strings, sorted alphabetically.
@@ -102,6 +101,8 @@ console.log(alphabeticalInventory);
 // To determine if a value is a string or a number, you can use the 'typeof' operator.
 // `typeof 8` would return `'number'`.
 // `typeof 'cat'` would return `'string'`.
+
+
 
 // Challenge 7:
 // Sort the 'inventory' array by 'stock' in descending order.

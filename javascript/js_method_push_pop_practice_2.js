@@ -37,8 +37,6 @@ let productsInCart = ["Laptop", "Mouse", "Keyboard"]; // Shopping cart items
 Section 3: Challenge Prompts/Questions
 ================================================================================
 
-// --- Advanced Mechanics & Real-World Use Cases (Challenges 1-10) ---
-
 // 1. New Page Visit
 //    a) The user visits "amazon.com". Add this new page to the end of `browserHistory` using push().
 //    b) Store the new length of the array in a variable named `historyCount`.

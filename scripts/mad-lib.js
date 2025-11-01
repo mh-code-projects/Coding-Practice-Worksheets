@@ -55,7 +55,6 @@ function typeMadLibParagraph() {
         typingIntervalId = null;
         return;
     }
-    console.log(madLibParagraphCharacterIndex);
     const madLibNextCharacter = madLibParagraphTextContent.charAt(
         madLibParagraphCharacterIndex
     );

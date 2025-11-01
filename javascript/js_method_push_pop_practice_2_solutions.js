@@ -32,28 +32,31 @@ let undoStack = []; // Used for storing reversible actions
 let productsInCart = ["Laptop", "Mouse", "Keyboard"]; // Shopping cart items
 
 
-/*
-================================================================================
-Section 3: Challenge Prompts/Questions
-================================================================================
 
-// --- Advanced Mechanics & Real-World Use Cases (Challenges 1-10) ---
+// ================================================================================
+// Section 3: Challenge Prompts/Questions
+// ================================================================================
 
 // 1. New Page Visit
 //    a) The user visits "amazon.com". Add this new page to the end of `browserHistory` using push().
 //    b) Store the new length of the array in a variable named `historyCount`.
+const historyCount = (browserHistory.push("amazon.com"));
 
 // 2. Going Back (Undo)
 //    a) The user hits the "Back" button. Use pop() to remove the last visited page from `browserHistory`.
 //    b) Store the URL of the removed page in a variable called `lastVisitedPage`.
+const lastVisitedPage = (browserHistory.pop());
 
 // 3. Saving a Draft
 //    a) A user starts a new email draft: "Subject: Important Update". Use push() to add this string to the `draftEmails` array.
 //    b) Another draft is started: "Subject: Follow-up". Add this one to the array as well.
+const draftCount = (draftEmails.push("Subject: Important Update"));
+draftEmails.push("Subject: Follow Up");
 
 // 4. Complex Item Added to Cart
 //    a) A user adds a new item: "Monitor". Use push() to add "Monitor" to the `productsInCart` array.
 //    b) Now, a user adds multiple of the same item: "Webcam" and another "Webcam". Add both with a single push() call.
+productsInCart.push("Monitor", "Webcam", "Webcam");
 
 // 5. Simulating 'Clear Last Action'
 //    a) The user wants to clear the most recent action logged in `userActions`. Use pop() to remove it.
