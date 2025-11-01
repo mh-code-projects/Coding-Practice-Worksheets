@@ -121,8 +121,6 @@ for (user of users) {
   Task: Create a new, empty string called `reversedSentence`. Use a for...of loop to iterate through the characters of the `sentence` string and build the new string in reverse order. Print the `reversedSentence`.
   Hint: Think about how you are adding the current character to the new string in each iteration.
 */
-const sentence = "The qUick brown fox";
-
 let reversedSentence = [];
 for (character of sentence) {
   reversedSentence = character + reversedSentence;
@@ -134,9 +132,14 @@ for (character of sentence) {
   
   Hint: Use a `break` statement to stop the loop early.
 */
+let hasBlue = false;
 for (color of colors) {
-  
+  if (color === "blue") {
+    hasBlue = true;
+    break;
+  }
 }
+console.log(hasBlue);
 
 /*
   10. Find the Maximum Number

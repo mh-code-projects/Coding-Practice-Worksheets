@@ -31,9 +31,9 @@ let score = 0;
 let messageQueue = []; // Used for Challenge 9 & 10
 
 
-----------------------------------------------------------------------------------
-Section 3: Challenge Prompts/Questions
-----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
+// Section 3: Challenge Prompts/Questions
+// ----------------------------------------------------------------------------------
 
 // Challenge 1: The One-Time Greeting
 // Task: Create a function named 'delayedGreeting' that prints "Hello from the past!" to the console.
@@ -51,7 +51,7 @@ function delayedGreeting() {
 // HINT: You will need four separate setTimeout calls.
 function boostScore() {
 		score = score + 5;
-		console.log(score);
+		console.log(`The score is ${score}.`)
 };
 setTimeout(boostScore, 1000);
 setTimeout(boostScore, 2000);
@@ -66,23 +66,34 @@ setTimeout(boostScore, 4000);
 let timerID;
 function countDownClock() {
 		countdownValue--;
-		
+
+		//mods from challenge 4//
+		if (countdownValue <= 0) {
+			clearInterval(timerID) 
+			console.log('Lift Off! Timer stopped.')
+		} 
+		//end of challenge 4 mods//
+
 		console.log(countdownValue);
 };
-
 timerID = setInterval(countDownClock, 1000);
-
 
 // Challenge 4: Stopping the Timer (Using clearInterval)
 // Task: Modify the callback function from Challenge 3.
 // Inside the callback, add an 'if' statement that checks if 'countdownValue' is less than or equal to 0.
 // If it is, use clearInterval() with 'timerID' to stop the interval, and print "Lift-off! Timer stopped."
 
+//SEE SOLUTION AT CHALLENGE 3
+
 // Challenge 5: Conditional Delayed Action (Using the final score)
 // Task: Define a function named 'checkScoreAndAlert'.
 // This function should check the final value of the global 'score'.
 // If 'score' is greater than 15, it should print "Victory is ours: Score > 15!". Otherwise, it should print "A valiant effort: Score <= 15.".
 // Use setTimeout() to run 'checkScoreAndAlert' only once, **10 seconds** from now. (This ensures all boosts from Challenge 2 have run).
+function checkScoreAndAlert() {
+	(score > 15) ? console.log('Victory is ours: Score > 15') : console.log('A valiant effort: Score <= 15');
+}
+setTimeout(checkScoreAndAlert, 10000);
 
 // Challenge 6: Clearing a Timeout (More complex flow control)
 // Task: Define a function named 'cancelWarning' that prints "Warning cleared just in time!" to the console.
@@ -90,6 +101,7 @@ timerID = setInterval(countDownClock, 1000);
 // B) Assign the result of a setTimeout call to 'warningTimeoutID'. This timeout should print "CRITICAL WARNING!" after 5 seconds.
 // C) Immediately use a **separate** setTimeout call to execute 'cancelWarning' and **clear** the 'warningTimeoutID'. This second timeout should run after only 2 seconds.
 // (If done correctly, you should only see the "Warning cleared..." message, not the "CRITICAL WARNING!").
+
 
 // Challenge 7: The Flashing Indicator (Self-modifying interval)
 // Task: Create a function named 'flashMessage' that prints "FLASHING" to the console and then uses **setTimeout** inside its own body to call itself again after 500 milliseconds.

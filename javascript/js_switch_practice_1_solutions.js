@@ -114,6 +114,7 @@ case default:
 // - "K": "Kelvin conversion requires a more complex function"
 // - default: "Unknown Unit"
 
+
 // --- Challenge 4: Grouping Items and Simple Pricing ---
 // Goal: Determine the category and price for a 'fruitSelection'.
 // Prompt: Create a switch statement for 'fruitSelection'. Assign the category and price
