@@ -88,6 +88,9 @@ const currentDayName = dayNames[currentDayNameIndex];
 
 // Prompt 7: Create a variable 'timeInMilliseconds' and assign it the number of milliseconds that have passed since the Unix Epoch (Jan 1, 1970) up to 'today'.
 
+const timeInMilliseconds = (new Date()).getTime();
+console.log(timeInMilliseconds);
+
 // --- BASIC FORMATTING (8-10) ---
 
 // Prompt 8: Create a variable 'simpleDate' and assign it a nicely formatted date string (e.g., "Tue Oct 21 2025") from the 'today' object.

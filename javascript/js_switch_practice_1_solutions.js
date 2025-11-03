@@ -125,10 +125,8 @@ case "F":
     conversionFormula = 'Kelvin conversion requires a more complex function';
     break;
   default:
-    conversionFormula = 'Unkown unit'
-
+    conversionFormula = 'Unknown unit'
 }
-
 
 // --- Challenge 4: Grouping Items and Simple Pricing ---
 // Goal: Determine the category and price for a 'fruitSelection'.
