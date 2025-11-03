@@ -72,7 +72,7 @@ switch (currentDayNumber) {
     dayName = "Friday";
     break;
   case 6:
-    dayName = "Saturday"
+    dayName = "Saturday";
     break;
   default:
     dayName = "That is not a valid day";
@@ -87,23 +87,23 @@ switch (currentDayNumber) {
 // - default: "No Defined Access"
 let accessLevel = "";
 switch{
-case admin:
-  accessLevel = "Full Write Access";
-  break;
-case editor:
-  accessLevel = "Full Write Access";
-  break;
-case user:
-  accessLevel = "Limited Read/Write access";
-  break;
-case guest:
-  accessLevel = "Read-Only Access"
-  break;
-case viewer:
-  accessLevel = "Read-Only Access";
-  break;
-case default:
-  accessLevel = "No defined Access";
+  case admin:
+    accessLevel = "Full Write Access";
+    break;
+  case editor:
+    accessLevel = "Full Write Access";
+    break;
+  case user:
+    accessLevel = "Limited Read/Write access";
+    break;
+  case guest:
+    accessLevel = "Read-Only Access"
+    break;
+  case viewer:
+    accessLevel = "Read-Only Access";
+    break;
+  default:
+    accessLevel = "No defined Access";
 }
 
 // --- Challenge 3: Unit Conversion (Executing Logic) ---
@@ -113,6 +113,21 @@ case default:
 // - "C": "Celsius to Fahrenheit: (T * 9/5) + 32"
 // - "K": "Kelvin conversion requires a more complex function"
 // - default: "Unknown Unit"
+let conversionFormula = '';
+switch (temperatureUnit) {
+case "F":
+    conversionFormula = 'Fahrenheit to Celsius: (T - 32) * 5/9';
+    break;
+  case "C":
+    conversionFormula='Celsius to Fahrenheit: (T * 9/5) + 32';
+    break;
+  case "K":
+    conversionFormula = 'Kelvin conversion requires a more complex function';
+    break;
+  default:
+    conversionFormula = 'Unkown unit'
+
+}
 
 
 // --- Challenge 4: Grouping Items and Simple Pricing ---
