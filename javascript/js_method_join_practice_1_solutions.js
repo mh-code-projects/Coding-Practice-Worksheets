@@ -46,20 +46,32 @@ const csvData = [
 
 // 1. Basic Joining - Default Separator
 // Goal: Create a string from the 'fruits' array using the default separator.
+const fruitString = fruits.join(",");
 
 // 2. Basic Joining - No Separator
 // Goal: Combine the elements of the 'letters' array into a single word, with no characters between the letters.
+const lettersWord = letters.join("");
 
 // 3. Joining for Display
 // Goal: Create a string from the 'fruits' array where each fruit is separated by a comma followed by a space (", ").
+const fruitString2 = fruits.join(", ");
 
 // 4. Joining for File Paths
 // Goal: Create an array of directory names: ['users', 'documents', 'work', 'report.pdf']. Then, use .join() to format it into a standard file path string, separated by a forward slash ('/').
+const directory = ['users', 'documents', 'work', 'report.pdf'];
+const filePath = directory.join("/");
 
 // --- Combining with Other Methods for Practical Use (Use any array methods necessary!) ---
 
 // 5. Array Reversal and Joining
 // Goal: Take the 'letters' array, reverse the order of its elements, and then join them into a single reversed word string with no separator.
+
+//iterate through the array in reverse, putting each character into a a new array.
+for (let i=letters.length; i>=0; i--){
+  //Move/copy the last letter to the new array
+}
+//join the character objects of the new array to the string
+
 
 // 6. Filtering and Joining
 // Goal: Take the 'fruits' array, remove the fruit "date", and then join the remaining elements with a hyphen ('-').
