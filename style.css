@@ -49,3 +49,58 @@
       font-size:smaller;
       font-style:italic;
     }
+
+    .special {
+      font-weight: 300;
+      font-style: italic;
+      border: blue;
+      border-style:ridge;
+      padding:3px;
+      border-radius: 5%;
+    }
+
+    .special2 {
+      font-weight: 300;
+      font-style: italic;
+      padding:3px;
+      list-style:circle;
+
+    }
+
+
+
+.jellyBeanTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  table-layout: fixed;        /* prevents cells from stretching unevenly */
+}
+
+.jellyBeanTable th,
+.jellyBeanTable td {
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  word-break: break-word;     /* ensures long text wraps instead of overflowing */
+}
+
+.jellyBeanTable thead {
+  background: linear-gradient(#f8f8f8, #ececec);
+  position: sticky;           /* header stays visible when table scrolls */
+  top: 0;
+  z-index: 1;
+}
+
+.jellyBeanTable tbody tr:nth-child(even) {
+  background-color: #fafafa;  /* zebra striping */
+}
+
+.jellyBeanTable tbody tr:hover {
+  background-color: #f1f7ff;  /* subtle hover highlight */
+}
+
+.jellyBeanTable {
+  max-height: 400px;
+  overflow-y: auto;           /* wrap table in a div with class .table-container if you need scrolling */
+}

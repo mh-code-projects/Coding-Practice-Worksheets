@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="/scripts/color-changer.js"></script>
   <script src="/scripts/mad-lib.js"></script>
+
+
   <!-- <script src="/scripts/filename-maker.js"></script> -->
 
 
@@ -51,12 +53,39 @@
 
   <div>
     <h4>Parse a filename as a regular name</h4>
+    <h5>UNDER CONSTRUCTION</h5>
     <p>Remove underscores, append letters</p>
     <input type="text" id="filenameText" value="12_2005/file_name_01"> <button id="filenameMakerButton" type="text">Go!</button> </input><br />
     <span id="filenameMakerOutput">The processed name will go here</span>
 
 
   </div>
+
+  <div>
+    <h4>Working With Animals</h4>
+    <p>This Button will get a random extinct Animal and show it below</p>
+    <button id='buttonGetAPI'>Get Animal </button>
+    <p><span class="special" id="apiContents">This will be the animal name</span></p>
+    <p>And Then we'll do something with the Animal info with this next button.</p>
+    <button id="buttonDoSomethingWithAPI">Do Something</button>
+    <p><span id="theThingDisplayed">- The Thing -</span></p>
+  </div>
+
+
+    <div>
+    <h4>Working With Jelly Beans</h4>
+    <p>This Button will get an list of Jelly Beans and show it below</p>
+    <button id='buttonGetAPIJellyBean'>Get Jelly Beans </button>
+    <p><span class="special2" id="apiContentsJellyBean">This will be the API content</span></p>
+    <p>And Then we'll do something with the API data with this next button.</p>
+    <button id="buttonDoSomethingWithAPIJellyBean">Do Something</button>
+    <p><span id="theThingDisplayedJellyBean">- The Thing -</span></p>
+  </div>
+
+
+
+
+  <script src="/scripts/working-with-api.js"></script>
 </body>
 
 </html>
