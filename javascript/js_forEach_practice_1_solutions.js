@@ -73,7 +73,9 @@ customerNames.forEach(function(name){
 // Task: Use the forEach method on the 'numbers' array. For each number, print a
 // message that includes its position (index) in the array.
 // Example for the first number: "Value at position 0 is 10"
-
+numbers.forEach(function(number, index){
+  console.log(`Value at position ${index} is ${number}`);
+})
 
 // ------------------------------------------------------------------------------
 // Challenge 3: Working with Objects (A common real-world use case)
@@ -81,7 +83,9 @@ customerNames.forEach(function(name){
 // Task: Use the forEach method on the 'inventory' array. For each item (object),
 // print its name and its price.
 // Example for the first item: "Laptop costs $1200"
-
+inventory.forEach(function(item){
+  console.log(`${item.name} costs $${item.price}`);
+});
 
 // ------------------------------------------------------------------------------
 // Challenge 4: Conditional Logic within forEach
