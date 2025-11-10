@@ -39,10 +39,10 @@ const csvData = [
 ];
 
 
-/*
-================================================
-Section 3: Challenge Prompts/Questions
-================================================
+
+// ================================================
+// Section 3: Challenge Prompts/Questions
+// ================================================
 
 // 1. Basic Joining - Default Separator
 // Goal: Create a string from the 'fruits' array using the default separator.

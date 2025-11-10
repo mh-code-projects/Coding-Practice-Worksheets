@@ -64,7 +64,7 @@ const customer = {
     city: "New York"
 };
 
-const numbers = [5, 12, 8, 130, 44];
+const numbersArrow = [5, 12, 8, 130, 44];
 
 
 /*
