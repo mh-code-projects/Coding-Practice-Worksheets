@@ -93,7 +93,11 @@ inventory.forEach(function(item){
 // Task: Use the forEach method on the 'numbers' array. Print *only* the numbers
 // that are greater than 20. This requires using an 'if' statement inside the
 // callback function.
-
+numbers.forEach(function(number){
+  if (number > 20) {
+    console.log(number);
+  };
+});
 
 // ------------------------------------------------------------------------------
 // Challenge 5: Performing Calculations and Aggregation

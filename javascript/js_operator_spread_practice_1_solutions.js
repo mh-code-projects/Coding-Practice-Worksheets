@@ -43,21 +43,25 @@ const salesData = [
   { region: 'West', sales: 2500 }
 ];
 
-/*
-  Section 3: Challenge Prompts
+
+// Section 3: Challenge Prompts
 
   // Challenge 1: Combining Arrays
   // Create a new array called `produce` that combines all the elements from the `vegetables` and `fruits` arrays.
+  const produce = [...vegetables] +","+ [...fruits];
 
   // Challenge 2: Adding an Element to an Array
   // Create a new array called `shoppingList` that contains a copy of the `vegetables` array plus the new item 'lettuce' at the beginning.
+  const shoppingList = ["lettuce"]+","+[...vegetables];
 
   // Challenge 3: Creating an Object Copy
   // Create a new object called `clonedProfile` that is a copy of the `userProfile` object.
   // Do not mutate the original `userProfile` object.
+  const clonedProfile = {...userProfile};
 
   // Challenge 4: Combining Objects
   // Create a new object called `userFullData` that combines the properties from both the `userProfile` and `userSettings` objects.
+  let userFullData = {...userProfile, ...userSettings};
 
   // Challenge 5: Updating an Object
   // Create a new object called `updatedUserProfile` that is a copy of `userProfile` but with the `age` property changed to 31 and a new `country` property set to 'USA'.
@@ -68,15 +72,11 @@ const salesData = [
 
   // Challenge 7: Passing Object Properties as Function Arguments
   // Given the following function, use the spread operator to call it by "spreading" the `userProfile` object.
-  // function displayProfile(name, age, city) {
-  //   console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
-  // }
 
   // Challenge 8: Adding a property to an object with a calculated value
   // Create a new object called `newUserProfile` that is a copy of `userProfile` but with a new property called `greeting` that contains a welcome message, using the user's name from the object.
 
-/*
-  Section 4: Advanced Challenges: Spreading with Other Methods
+  // Section 4: Advanced Challenges: Spreading with Other Methods
 
   // Challenge 9: Spreading with .map() for Immutable Updates
   // Create a new array called `productsWithTax` that is a copy of the `products` array.
