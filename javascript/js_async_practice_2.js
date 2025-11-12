@@ -1,112 +1,170 @@
-// SECTION 1: Reference: Quick Guide for setTimeout()
-
 /*
-Purpose: To execute a function or a specified piece of code once after a delay.
-Syntax:
-    setTimeout(functionReference, delayInMilliseconds, optionalArg1, optionalArg2, ...);
-
-Example 1 (Using a named function):
-    function sayHello() { console.log("Hello!"); }
-    setTimeout(sayHello, 2000); // Logs "Hello!" after 2 seconds (2000ms)
-
-Example 2 (Using an anonymous function - useful when you need local variables):
-    let user = "Alex";
-    setTimeout(() => {
-        console.log(`Welcome back, ${user}`);
-    }, 1500); // Logs after 1.5 seconds (1500ms)
-
-Key Concept - Asynchronicity:
-JavaScript doesn't stop and wait for setTimeout to finish. It puts the function aside
-to be run later, and continues immediately with the rest of the script. The timer
-starts counting down instantly.
+======================================================
+Section 1: Reference: Quick Guide for Asynchronous JavaScript
+======================================================
 */
 
-// SECTION 2: Sample Data and Variables
+// --- What is Asynchronous Code? ---
+// Asynchronous code allows a program to start a potentially long-running task
+// (like fetching data from a server) and still be responsive to other events
+// while that task is pending.
 
-let eventLog = []; // Use this array for logging results in challenges A-C
-let countdown = 5; // Use this variable for challenge D
-let points = 0; // Use this variable for challenge F
+// --- The Promise Object ---
+// A Promise is an object representing the eventual completion (or failure)
+// of an asynchronous operation and its resulting value.
 
-// SECTION 3: Challenge Prompts
+// --- 1. The .then() and .catch() Methods (Promise Chaining) ---
+// Use Promises directly to handle the result or error.
 
-// A) The Delayed Log
-// Task: Write a function called 'logMessage' that takes one argument, 'message', and pushes it to the 'eventLog' array.
-// Then, use setTimeout() to call 'logMessage' with the string "Timer 1 Finished!" after 3 seconds (3000ms).
+/*
+Syntax:
+fetch(url)
+  .then(response => response.json()) // .then() handles successful completion
+  .then(data => { ... })
+  .catch(error => { ... });         // .catch() handles failure/errors
+*/
 
-// B) Sequential vs. Asynchronous Order
-// Task: Predict and then observe the order of execution.
-// 1. Immediately log the string "Script Start" to the console.
-// 2. Use a second setTimeout() to call 'logMessage' with the string "Timer 2 (1 sec)" after 1000ms.
-// 3. Immediately log the string "Script End" to the console.
-// What appears first, "Timer 2 (1 sec)" or "Script End"? Why?
+// Use Case: A traditional way to execute code after an asynchronous task completes,
+// often used when you need to perform sequential asynchronous tasks.
 
-// C) Passing Arguments Directly
-// Task: Use setTimeout() to call 'logMessage' after 500ms. This time, pass the message "Fastest Log" directly through the optional arguments of setTimeout.
-// Reference:
-//   setTimeout(functionName, delay, arg1, arg2); // functionName will receive arg1, arg2, etc. as its parameters.
+// --- 2. The async/await Keywords (Modern Approach) ---
+// The 'async' keyword is used before a function declaration to make it return a Promise.
+// The 'await' keyword can ONLY be used inside an 'async' function.
+// 'await' pauses the execution of the async function until the Promise is resolved.
 
-// D) Recursive Timeout: The Countdown Clock
-// Task: Write a function named 'startCountdown' that does the following:
-// 1. Decrements the global 'countdown' variable by 1.
-// 2. Prints the new value of 'countdown' to the console.
-// 3. IF 'countdown' is greater than 0, the function must call itself using setTimeout() with a delay of 1 second (1000ms).
-// This creates a loop that runs every second until the condition is met.
+/*
+Syntax:
+async function fetchData(url) {
+  try {
+    const response = await fetch(url); // Pauses here until data is fetched
+    const data = await response.json();  // Pauses here until body is parsed to JSON
+    return data;
+  } catch (error) {
+    // catch() handles errors for the entire try block
+    console.error("An error occurred:", error);
+  }
+}
+*/
 
-// E) Clearing the Timer (Bailing Out)
-// New Concept - clearTimeout():
-//   Use: Stops a timer from executing before its delay is up.
-//   Syntax:
-//     let timerID = setTimeout(functionToRun, delay);
-//     clearTimeout(timerID); // The function associated with timerID will not run.
-// Task: Create a new setTimeout that would normally print "Self-Destruct in 5 seconds!" after 5000ms.
-// Store the ID of this timer in a variable called 'emergencyStop'.
-// Then, immediately use clearTimeout() on 'emergencyStop' to prevent the message from ever being printed.
+// Use Case: Makes asynchronous code look and behave more like synchronous code,
+// which is often easier to read and maintain.
 
-// F) Nested Timers: The Score Combo
-// Task: Create a function called 'activateCombo' that adds 10 to the global 'points' variable and prints the new score.
-// Use setTimeout() to call 'activateCombo' after 1 second (1000ms).
-// CHALLENGE: Inside the 'activateCombo' function, add another setTimeout() call that waits 500ms (0.5 seconds) and then adds another 5 points to 'points' and prints the score again.
-// What will the final score be?
+/*
+======================================================
+Section 2: Sample Data & API Endpoints
+======================================================
+*/
 
-// G) Why Anonymous Functions? (Handling Block Scope)
-// Background: When you use a 'for' loop to set multiple timeouts, if you use 'var' or don't wrap the logic, all the timers share the SAME final value of the loop variable.
-// Task: Using a 'for' loop (from i = 1 to 3), use setTimeout to print the value of 'i' after 'i * 1000' milliseconds.
-// HINT: You MUST use an anonymous (arrow) function inside the setTimeout to "capture" the correct value of 'i' at each iteration.
-// Correct Syntax:
-//   for (let i = 1; i <= 3; i++) {
-//       setTimeout(() => { // The anonymous function captures the current 'i'
-//           // Code to print i
-//       }, i * 1000);
-//   }
+// The `fetch()` function is built into modern browsers and Node.js (with a polyfill or v18+),
+// and it returns a Promise. We will use it for all requests.
 
-// H) The Time-Based Decision
-// Task: Write a function named 'checkTime' that prints "You were slow!"
-// Set a 2000ms timer to call 'checkTime'. Store the timer ID in a variable called 'timerID'.
-// Immediately after setting the timer, add an 'if' statement that has a 50% chance (e.g., if Math.random() < 0.5) of immediately calling clearTimeout(timerID).
-// If the timer is cleared, print "You were fast enough!"
+const JOKE_API_URL = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+const USER_API_URL = "https://jsonplaceholder.typicode.com/users/1";
+const TODOS_API_BASE_URL = "https://jsonplaceholder.typicode.com/todos?userId=";
+const POSTS_API_BASE_URL = "https://jsonplaceholder.typicode.com/posts?userId=";
 
-// I) Delayed Function with Parameters and Context
-// Task: Write a function 'greetUser(name)' that prints "Hello, [name]".
-// Use setTimeout to call 'greetUser' after 2500ms.
-// The challenge: You must pass the string "Coding Coach" as the name parameter.
-// You have two options, choose one (or both!):
-// 1. Anonymous function wrapper (e.g., `setTimeout(() => { ... }, delay);`)
-// 2. Direct parameter passing (e.g., `setTimeout(func, delay, arg1);`)
+/*
+======================================================
+Section 3: Challenge Prompts/Questions
+======================================================
+*/
 
-// J) Challenge: The Promise of Tomorrow (Introducing the modern alternative)
-// New Concept - Promises and Async/Await:
-//   setTimeout is a low-level tool. Modern JS often uses Promises to manage complex asynchronous flows.
-//   Syntax for a simple delay using a Promise:
-//     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-//     async function runSequence() {
-//         await delay(1000); // Pauses the function for 1 second!
-//         console.log("1 second passed.");
-//     }
-// Task: Copy the 'delay' function and the 'runSequence' function.
-// Modify 'runSequence' to:
-// 1. Log "Starting sequence..."
-// 2. Await a delay of 500ms.
-// 3. Log "Half a second has passed."
-// 4. Await a delay of 1500ms.
-// 5. Log "Total of 2 seconds passed."
-// Finally, call 'runSequence()'. (This is just an intro—don't worry if it's confusing, but give it a try!)
+// ----------------------------------------------------
+//  Problem 1: Basic Async/Await Fetch (The Setup)
+// ----------------------------------------------------
+// Task: Write an async function called 'fetchProgrammingJoke'.
+// Inside the function, use 'await' with the `fetch()` function to retrieve a joke
+// from the `JOKE_API_URL`.
+// Do not worry about parsing the response body yet, just get the initial response.
+// Print the response object to the console.
+
+// ----------------------------------------------------
+//  Problem 2: Parsing the Response Body
+// ----------------------------------------------------
+// Task: Modify your `fetchProgrammingJoke` function from Problem 1.
+// After the first `await fetch(...)`, add a second 'await' to parse the response body
+// into JSON.
+// Print *only the joke string* from the resulting JavaScript object to the console.
+// *Hint: The response object has a `.json()` method that returns a Promise.*
+
+// ----------------------------------------------------
+//  Problem 3: Basic Promise Chain (.then/.catch)
+// ----------------------------------------------------
+// Task: Rewrite the logic from Problem 2, but this time, use a Promise chain
+// with `.then()` and `.catch()`.
+// Call the function 'fetchJokeWithPromises'.
+// Ensure you handle the initial fetch, the parsing of the JSON, and log the joke string.
+// Include a `.catch()` block to log any errors that occur.
+
+// ----------------------------------------------------
+//  Problem 4: Error Handling with Try/Catch
+// ----------------------------------------------------
+// Task: Wrap the asynchronous logic inside your `fetchProgrammingJoke` (from Problem 2)
+// with a `try...catch` block. This is the equivalent of the `.catch()` from Problem 3.
+// Inside the `catch` block, print a custom error message like:
+// "Failed to fetch joke: [insert error message here]".
+// *Note: To test the error, you might temporarily change the URL to an invalid one.*
+
+// ----------------------------------------------------
+//  Problem 5: Sequential Asynchronous Tasks (Data Combination)
+// ----------------------------------------------------
+// Task: Write an async function 'fetchUserAndTodos'.
+// A) First, fetch the user data from `USER_API_URL`.
+// B) Once you have the user's ID, use the `TODOS_API_BASE_URL` and the user's ID
+//    to fetch that specific user's to-do list.
+// C) Log a single object containing the user's name and their total number of todos.
+// Expected output format (example): { userName: "Leanne Graham", todoCount: 20 }
+
+// ----------------------------------------------------
+//  Problem 6: Combining `.then()` and `async/await`
+// ----------------------------------------------------
+// Task: Re-implement the logic from Problem 5, but use a combination of `async/await`
+// and a single `.then()` chain.
+// Write an async function 'getCombinedData' that fetches the user and returns the
+// `userId` and `name`.
+// Then, *outside* of that function, call 'getCombinedData' and use a `.then()` to
+// take the returned `userId` and fetch the todos list using another `async/await`
+// inside the `.then()` callback.
+// Log the same final object as in Problem 5.
+
+// ----------------------------------------------------
+//  Problem 7: Building a Profile Summary (Multiple Awaits)
+// ----------------------------------------------------
+// Task: Write an async function 'buildUserProfileSummary'.
+// The goal is to gather information from three API calls to create a detailed summary.
+// A) Fetch the user data from `USER_API_URL`.
+// B) Use the retrieved user ID to fetch the todos list from `TODOS_API_BASE_URL`.
+// C) Use the retrieved user ID to fetch the posts list from `POSTS_API_BASE_URL`.
+// D) Log a final summary object containing the user's name, email, total number of todos,
+//    and total number of posts.
+// *Hint: This is a complex, multi-step problem. Break it down into the three sequential awaits.*
+
+// ----------------------------------------------------
+//  Problem 8: Cleaning Data with Chaining
+// ----------------------------------------------------
+// Task: Using the Promise `.then()` chaining approach, re-implement the logic from Problem 7
+// to build the same final summary object.
+// Your goal is to keep the chain readable.
+// The first `.then()` should handle the user fetch and return the new fetch call for todos.
+// The second `.then()` should handle the todos fetch and return the new fetch call for posts.
+// The third `.then()` should combine all the pieces and log the final summary object.
+// *This is a challenging exercise in managing scope and values across a long chain!*
+
+// ----------------------------------------------------
+//  Problem 9: Real-World Use Case: Filtering Data
+// ----------------------------------------------------
+// Task: Write an async function 'getCompletedTodoTitles'.
+// A) Fetch all todos for the user from `TODOS_API_BASE_URL` (using the ID from the user API).
+// B) Use JavaScript array methods (like `.filter()` and `.map()`) on the resulting array of todo objects
+//    to get an array of only the titles of the todos that have `completed: true`.
+// C) Log the final array of completed todo titles.
+
+// ----------------------------------------------------
+//  Problem 10: Final Challenge: Conditional Async Logic
+// ----------------------------------------------------
+// Task: Write an async function 'getPostTitlesIfUserIsActive'.
+// The goal is to only fetch the posts if the user's email ends with ".biz" (a common example of a simple "active" check).
+// A) Fetch the user data from `USER_API_URL`.
+// B) *Condition:* Check if the user's `email` property ends with the string ".biz".
+// C) If the condition is true, fetch the user's posts from `POSTS_API_BASE_URL` and log an array of their post titles.
+// D) If the condition is false, log the message: "User [User Name] is not active, skipping post retrieval."
