@@ -78,7 +78,15 @@ Section 3: Challenge Prompts/Questions
 // Do not worry about parsing the response body yet, just get the initial response.
 // Print the response object to the console.
 async function fetchProgrammingJoke(JOKE_API_URL){
-    const joke = await fetch(JOKE_API_URL);
+    const response = await fetch(JOKE_API_URL);
+
+    //PROBELM 2 SOLUTION
+
+    const jokeComplete = await response.json();
+    console.log(jokeComplete);
+
+    //END PROBLEM 2 SOLUTION
+
 };
 
 //  Problem 2: Parsing the Response Body
@@ -89,7 +97,7 @@ async function fetchProgrammingJoke(JOKE_API_URL){
 // Print *only the joke string* from the resulting JavaScript object to the console.
 // *Hint: The response object has a `.json()` method that returns a Promise.*
 
-
+// FOR SOLUTION SEE PROBLEM 2
 
 // ----------------------------------------------------
 //  Problem 3: Basic Promise Chain (.then/.catch)
@@ -99,6 +107,15 @@ async function fetchProgrammingJoke(JOKE_API_URL){
 // Call the function 'fetchJokeWithPromises'.
 // Ensure you handle the initial fetch, the parsing of the JSON, and log the joke string.
 // Include a `.catch()` block to log any errors that occur.
+
+function fetchJokeWithPromises(JOKE_API_URL) { 
+  fetch(JOKE_API_URL)
+  .then( response => response.json())
+  .then(jokeData => jokeData.joke)
+  .then(actualJoke => console.log(actualJoke))
+  .catch(error => console.log('Error: This is not a joke'));
+};
+fetchJokeWithPromises(JOKE_API_URL);
 
 // ----------------------------------------------------
 //  Problem 4: Error Handling with Try/Catch
