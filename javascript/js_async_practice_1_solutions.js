@@ -96,7 +96,7 @@ function checkScoreAndAlert() {
 setTimeout(checkScoreAndAlert, 10000);
 
 // Challenge 6: Clearing a Timeout (More complex flow control)
-// Task: Define a function named 'cancelWarning' that prints "Warning cleared just in time!" to the console.
+// Task: Define a function named 'cancelWarni	ng' that prints "Warning cleared just in time!" to the console.
 // A) Create a variable named 'warningTimeoutID'.
 // B) Assign the result of a setTimeout call to 'warningTimeoutID'. This timeout should print "CRITICAL WARNING!" after 5 seconds.
 // C) Immediately use a **separate** setTimeout call to execute 'cancelWarning' and **clear** the 'warningTimeoutID'. This second timeout should run after only 2 seconds.

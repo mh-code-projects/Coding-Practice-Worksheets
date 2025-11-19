@@ -1,0 +1,307 @@
+JAVASCRIPT ASYNC & PROMISES — EDUCATIONAL WORKSHEET
+===================================================
+
+Each task includes:
+- A short explanation of the concept
+- A minimal syntax reminder
+- No full solutions (you must write the code yourself)
+
+Revisit regularly for mastery.
+
+
+=====================================
+SECTION 1 — Core Promise Fundamentals
+=====================================
+
+1.1 — Create a basic Promise
+----------------------------
+Concept: A Promise is an object representing a future value.
+Syntax reminder:
+  new Promise((resolve, reject) => { ... })
+Task:
+  Write a function that returns a promise resolving with "hello".
+
+
+1.2 — Promise with a delay
+--------------------------
+Concept: Promises often wrap async operations like timeouts.
+Syntax reminder:
+  setTimeout(() => resolve(...), ms)
+Task:
+  Create a promise that resolves after 1 second.
+
+
+1.3 — Parameterized delay
+-------------------------
+Concept: Promises become powerful when they’re reusable.
+Task:
+  Write a function `wait(ms)` that returns a promise resolving after `ms` milliseconds.
+
+
+1.4 — Rejection
+---------------
+Concept: Promises may fail — rejection is critical in async programming.
+Syntax reminder:
+  reject("error message")
+Task:
+  Create a promise that immediately rejects.
+
+
+1.5 — Conditional resolve/reject
+--------------------------------
+Concept: You control how/when a promise succeeds or fails.
+Task:
+  Write a function that resolves if a number is even, rejects if odd.
+
+
+
+==============================
+SECTION 2 — then() Chains
+==============================
+
+2.1 — Chain three steps
+-----------------------
+Concept: `.then()` chains create sequential async flows.
+Syntax reminder:
+  promise.then(result => { ... }).then(...)
+Task:
+  Make a chain of 3 `.then()` steps that log in order.
+
+
+2.2 — Pass values down a chain
+------------------------------
+Concept: Returning a value from `.then()` passes it to the next `.then()`.
+Task:
+  Start with a number-in-a-promise → modify it across three `.then()` calls.
+
+
+2.3 — Catch in a chain
+----------------------
+Concept: A `.catch()` handles errors thrown anywhere above it.
+Syntax reminder:
+  .catch(err => { ... })
+Task:
+  Throw an error in step 2, catch it, then continue.
+
+
+2.4 — Chain with branching
+--------------------------
+Concept: You can apply logic inside `.then()` callbacks.
+Task:
+  Inside the second `.then()`, branch logic using `if/else`.
+
+
+==============================
+SECTION 3 — Async/Await
+==============================
+
+3.1 — Rewrite a chain using async/await
+---------------------------------------
+Concept: async/await is Promise syntax made readable.
+Syntax reminder:
+  const value = await somePromise;
+Task:
+  Rewrite your solution from 2.1 using async/await.
+
+
+3.2 — Add try/catch
+-------------------
+Concept: Error handling with async/await uses try/catch blocks.
+Syntax reminder:
+  try { await something } catch(err) { ... }
+Task:
+  Write an async function that handles an error gracefully.
+
+
+3.3 — Sequential delays
+-----------------------
+Concept: Each `await` pauses until the promise settles.
+Task:
+  Use your `wait()` function to create a 3-step timed sequence.
+
+
+3.4 — Returning values
+----------------------
+Concept: async functions automatically wrap return values in a Promise.
+Syntax reminder:
+  return someValue;
+Task:
+  Write an async function that returns a value; log the result.
+
+
+========================================
+SECTION 4 — Simulated APIs (Mock Promises)
+========================================
+
+4.1 — Fake “database fetch”
+---------------------------
+Concept: Simulated async calls help you practice without real APIs.
+Task:
+  Create `getUser()` returning `{ name, age }` after 800ms.
+
+
+4.2 — Random failure
+--------------------
+Concept: Real APIs fail — simulate unpredictability.
+Syntax reminder:
+  Math.random() < 0.3
+Task:
+  Make `getUser()` fail 30% of the time.
+
+
+4.3 — Multiple mock endpoints
+-----------------------------
+Concept: Async flows often depend on multiple sequential calls.
+Task:
+  Create `getUser()`, `getPosts()`, `getComments()` with random delays, call them sequentially using `await`.
+
+
+4.4 — Parallel async
+---------------------
+Concept: `Promise.all()` executes independent tasks concurrently.
+Syntax reminder:
+  await Promise.all([fn1(), fn2()])
+Task:
+  Call all three mock endpoints in parallel and wait for them to finish.
+
+
+4.5 — Partial failure handling
+------------------------------
+Concept: `Promise.allSettled()` returns results even when some fail.
+Task:
+  Make one endpoint fail randomly; use `Promise.allSettled()`.
+
+
+
+=================================
+SECTION 5 — Mixed Async Logic
+=================================
+
+5.1 — Race
+----------
+Concept: `Promise.race()` resolves/rejects based on the fastest promise.
+Task:
+  Create two promises with different delays and race them.
+
+
+5.2 — Timeout wrapper
+---------------------
+Concept: A timeout safeguard wraps slow async operations.
+Task:
+  Write `withTimeout(promise, ms)` so the operation fails if it takes too long.
+
+
+5.3 — Retry logic
+-----------------
+Concept: Many APIs need retry-on-failure behavior.
+Task:
+  Attempt an operation up to 3 times before giving up.
+
+
+5.4 — Waterfall pattern
+-----------------------
+Concept: Output of one async step becomes input to the next.
+Task:
+  Chain three async functions where each step transforms the previous result.
+
+
+5.5 — Async loop
+----------------
+Concept: Using `await` inside loops makes sequential async workflows.
+Syntax reminder:
+  for (const item of arr) { await doSomething(item); }
+Task:
+  Process an array of numbers one-by-one with random delays.
+
+
+
+=====================================
+SECTION 6 — Real API Practice
+=====================================
+
+6.1 — Basic fetch
+-----------------
+Concept: `fetch()` returns a promise with a Response object.
+Syntax reminder:
+  const res = await fetch(url);
+  const data = await res.json();
+Task:
+  Fetch JSON from a public API and log it.
+
+
+6.2 — Error handling
+--------------------
+Concept: fetch doesn’t throw on HTTP errors — you inspect status.
+Task:
+  Trigger a fetch error intentionally and catch it cleanly.
+
+
+6.3 — Transform response
+------------------------
+Concept: API data often needs reshaping before use.
+Task:
+  Fetch data, extract only specific fields, log the transformed result.
+
+
+6.4 — Sequential fetches
+-------------------------
+Concept: Some API calls depend on previous results.
+Task:
+  Fetch from API A, then API B, combine outputs.
+
+
+6.5 — Parallel fetches
+-----------------------
+Concept: Independent API calls can run simultaneously.
+Task:
+  Fetch two endpoints at the same time using `Promise.all()`.
+
+
+
+========================================
+SECTION 7 — Mini-Project (Optional)
+========================================
+
+7.1 — Mini mock API (in JS only)
+--------------------------------
+Concept: Simulated endpoints create controlled learning environments.
+Task:
+  Build:
+    - getProduct(id)
+    - listProducts()
+    - searchProducts(query)
+  All return Promises with small delays.
+
+
+7.2 — Mini "console app"
+------------------------
+Concept: A frontend doesn't need HTML — logic is logic.
+Task:
+  Create a simple log-based menu that calls the endpoints and prints results.
+
+
+7.3 — Add caching
+-----------------
+Concept: Store previous results to avoid repeated "fetching."
+Task:
+  Cache the listProducts() result on first call.
+
+
+7.4 — Artificial failures
+-------------------------
+Concept: Apps must survive flaky networks.
+Task:
+  Randomly reject some mock endpoints and handle errors gracefully.
+
+
+7.5 — Loading indicator
+-----------------------
+Concept: UX requires communicating waiting states.
+Task:
+  Simulate a "loading..." spinner in the console during operations.
+
+
+=====================================
+END OF WORKSHEET
+=====================================
+
