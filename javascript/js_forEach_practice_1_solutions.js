@@ -106,7 +106,11 @@ numbers.forEach(function(number){
 // You must declare a variable *outside* the forEach loop (e.g., 'totalInventoryValue')
 // to hold the running total, and then update it inside the loop.
 
-
+let totalInventoryValue = 0;
+inventory.forEach(function(item){
+totalInventoryValue = totalInventoryValue + (item.price * item.stock);
+console.log(totalInventoryValue);
+});
 
 // ------------------------------------------------------------------------------
 // Challenge 6: Storing Filtered Data in a New Array

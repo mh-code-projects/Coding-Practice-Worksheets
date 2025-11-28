@@ -71,10 +71,10 @@ const userStatusArray = userProfiles.map(user =>  {
 
 // const userStatusArray = userProfiles.map(user => [...user] {
    
-//    // userStatusArray += 
-// //    //if statement to decide how to mark the new StatusMessage property
-// //    //return completed user object
-// });
+   // userStatusArray += 
+//    //if statement to decide how to mark the new StatusMessage property
+//    //return completed user object
+});
 
 
 
