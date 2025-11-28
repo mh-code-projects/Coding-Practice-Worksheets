@@ -76,41 +76,42 @@ Section 3: Challenge Prompts/Questions
 // --- BASIC ARROW FUNCTION CREATION ---
 
 // Prompt 1: Create an arrow function named 'multiply' that takes two parameters, 'a' and 'b', and returns their product.
-// B) Use the **concise body** syntax.
+// Use the **concise body** syntax.
 
 // Prompt 2: Create an arrow function named 'getGreeting' that takes one parameter, 'name', and returns the string "Hello, [name]!".
-// B) Use the single-parameter, concise body syntax.
+// Use the single-parameter, concise body syntax.
 
 // Prompt 3: Create an arrow function named 'getCurrentTime' that takes **no parameters** and returns a string like "The time is: [Current Hour]".
-// C) Use the built-in 'new Date()' object and its '.getHours()' method to get the current hour.
+// Use the built-in 'new Date()' object and its '.getHours()' method to get the current hour.
 // Reference: new Date().getHours() will return the current hour (0-23).
 
+
 // Prompt 4: Create an arrow function named 'createFullName' that takes the 'customer' object as its parameter.
-// B) The function should return a string that combines the 'firstName' and 'lastName' properties, separated by a space.
-// C) When returning an object literal (which you aren't doing here, but for reference): Returning an object literal directly in a concise body requires parentheses around the object: `() => ({ key: value })`.
+// The function should return a string that combines the 'firstName' and 'lastName' properties, separated by a space.
+// When returning an object literal (which you aren't doing here, but for reference): Returning an object literal directly in a concise body requires parentheses around the object: `() => ({ key: value })`.
 
 // Prompt 5: Create an arrow function named 'describeProduct' that takes one product object (from the 'products' array) as a parameter.
-// B) The function should return an object literal containing only the 'name' and 'price' of the product.
-// C) Remember the rule for returning an object literal directly with the concise body syntax!
+// The function should return an object literal containing only the 'name' and 'price' of the product.
+// Remember the rule for returning an object literal directly with the concise body syntax!
 
 // --- ARROW FUNCTIONS WITH ARRAY METHODS (map & filter) ---
 
 // Prompt 6: Use the **Array.prototype.map()** method to create a new array named 'productNames'.
-// B) The new array should contain only the 'name' of each object in the 'products' array.
-// C) Your map callback function should be an arrow function.
+// The new array should contain only the 'name' of each object in the 'products' array.
+// Your map callback function should be an arrow function.
 
 // Prompt 7: Use the **Array.prototype.filter()** method to create a new array named 'affordableProducts'.
-// B) The new array should contain only the products from the 'products' array that have a 'price' less than 50.
-// C) Your filter callback function should be an arrow function.
+// The new array should contain only the products from the 'products' array that have a 'price' less than 50.
+// Your filter callback function should be an arrow function.
 
 // Prompt 8: Use the **Array.prototype.filter()** method to create a new array named 'inStockApparel'.
-// B) The new array should contain only the products that are both 'inStock: true' AND have the 'category: "Apparel"'.
-// C) This combines the use of filtering with logical operators (&& or ||).
+// The new array should contain only the products that are both 'inStock: true' AND have the 'category: "Apparel"'.
+// This combines the use of filtering with logical operators (&& or ||).
 
 // Prompt 9: Use the **Array.prototype.map()** method to create a new array named 'salePrices'.
-// B) The new array should contain the prices of all products, but reduced by 10% (i.e., multiply the price by 0.9).
-// C) Use the concise body syntax for your map callback.
+// The new array should contain the prices of all products, but reduced by 10% (i.e., multiply the price by 0.9).
+// Use the concise body syntax for your map callback.
 
 // Prompt 10: Use the **Array.prototype.filter()** method and the **Array.prototype.map()** method **chained together** to create a new array named 'expensiveProductNames'.
-// B) First, filter the 'products' array to keep only the products with a price of 50 or more.
-// C) Second, map the resulting array to extract only the 'name' of those expensive products. This is a common and powerful pattern!
+// First, filter the 'products' array to keep only the products with a price of 50 or more.
+// Second, map the resulting array to extract only the 'name' of those expensive products. This is a common and powerful pattern!
