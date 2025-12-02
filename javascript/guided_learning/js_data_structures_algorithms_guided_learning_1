@@ -1,0 +1,461 @@
+// ======================================================
+// SECTION 1 — REFERENCE: QUICK GUIDE FOR
+// DATA STRUCTURES & ALGORITHMS IN JAVASCRIPT
+// ======================================================
+//
+// This reference is here so you can scroll less and think more.
+// By the end of the worksheet, aim to solve without looking up here.
+
+
+// -------------------------
+// 1. ARRAYS (ORDERED LISTS)
+// -------------------------
+//
+// Purpose: Store ordered collections of values. Great for sequences, lists,
+// queues/stacks (with some conventions), and many algorithms.
+//
+// Basic creation:
+const exampleArray = [1, 2, 3, 4];
+
+// Access by index (0-based):
+//   exampleArray[0]      // first element
+//   exampleArray[exampleArray.length - 1]  // last element
+
+// Common methods:
+//   array.push(value)      // add to end
+//   array.pop()            // remove from end, returns removed
+//   array.shift()          // remove from start
+//   array.unshift(value)   // add to start
+//   array.includes(value)  // check if present
+//   array.indexOf(value)   // first index of value, or -1
+
+// Looping patterns:
+//   for (let i = 0; i < array.length; i++) { ... }
+//   for (const item of array) { ... }
+//
+// Transforming arrays:
+//   array.map(fn)       // returns new array of transformed values
+//   array.filter(fn)    // returns new array of values where fn(value) === true
+//   array.reduce(fn, initial) // combine values into single result
+
+
+// -------------------------
+// 2. OBJECTS (KEY–VALUE PAIRS)
+// -------------------------
+//
+// Purpose: Store data by named keys, like a dictionary. Great for fast lookups,
+// configuration, grouping, frequency counting, etc.
+//
+// Basic creation:
+const exampleUser = {
+  id: 1,
+  name: "Alice",
+  age: 28,
+  active: true
+};
+
+// Access properties:
+//   exampleUser.name
+//   exampleUser["age"]
+
+// Add / update / delete:
+//   exampleUser.country = "US";
+//   delete exampleUser.active;
+
+// Loop keys:
+//   for (const key in exampleUser) { ... }
+//
+// Get arrays of keys/values:
+//   Object.keys(exampleUser)   // ["id", "name", "age", "active"]
+//   Object.values(exampleUser) // [1, "Alice", 28, true]
+
+
+// -------------------------
+// 3. SETS AND MAPS (ES6)
+// -------------------------
+//
+// Set: unique values only.
+//   const s = new Set([1, 2, 2, 3]);    // Set {1, 2, 3}
+//   s.add(4);
+//   s.has(2);    // true
+//   s.delete(1);
+//
+// Map: key–value pairs with any type as key.
+//   const m = new Map();
+//   m.set("a", 1);
+//   m.get("a");    // 1
+//   m.has("a");    // true
+//   m.delete("a");
+
+
+// -------------------------
+// 4. STACKS & QUEUES (ABSTRACT DATA STRUCTURES)
+// -------------------------
+//
+// Stack (LIFO — Last In, First Out):
+//   - Push to top, pop from top.
+//   - Think of a stack of plates.
+//   Typical operations: push, pop, peek, isEmpty.
+//
+// Queue (FIFO — First In, First Out):
+//   - Enqueue at end, dequeue from front.
+//   - Think of a line at a store.
+//   Typical operations: enqueue, dequeue, peek, isEmpty.
+//
+// Simple stack using an array (idea):
+//   const stack = [];
+//   stack.push(value);   // push
+//   const top = stack.pop(); // pop
+//
+// Simple queue using an array (idea):
+//   const queue = [];
+//   queue.push(value);   // enqueue
+//   const first = queue.shift(); // dequeue
+
+
+// -------------------------
+// 5. BASIC ALGORITHMS & PATTERNS
+// -------------------------
+//
+// Linear search (find value in array):
+//   let foundIndex = -1;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === target) {
+//       foundIndex = i;
+//       break;
+//     }
+//   }
+//
+// Frequency map (count occurrences using object):
+//   const freq = {};
+//   for (const value of array) {
+//     if (!freq[value]) {
+//       freq[value] = 0;
+//     }
+//     freq[value] += 1;
+//   }
+//
+// Sorting (high level):
+//   array.sort((a, b) => a - b);   // numeric ascending
+//   array.sort((a, b) => b - a);   // numeric descending
+//
+// Time complexity (rough intuition):
+//   - O(n): work grows linearly with input size (e.g., one loop over array).
+//   - O(n^2): double loops over the same array.
+//   - O(log n): usually from divide and conquer (like binary search).
+//   - Big-O is about how work grows as inputs grow, not exact time.
+
+
+// ======================================================
+// SECTION 2 — SAMPLE DATA
+// (YOU WILL USE THESE CONSTANTS THROUGHOUT THE WORKSHEET)
+// ======================================================
+
+const numbers = [7, 2, 7, 9, 3, 1, 4, 7, 2, 10];
+
+const moreNumbers = [5, 1, 5, 2, 8, 5, 9, 3, 2];
+
+const words = [
+  "apple",
+  "banana",
+  "apple",
+  "cherry",
+  "banana",
+  "date",
+  "banana",
+  "cherry"
+];
+
+const users = [
+  { id: 1, name: "Alice", age: 28, active: true,  score: 12 },
+  { id: 2, name: "Bob",   age: 35, active: false, score: 7  },
+  { id: 3, name: "Cara",  age: 22, active: true,  score: 18 },
+  { id: 4, name: "Dan",   age: 40, active: true,  score: 4  },
+  { id: 5, name: "Ella",  age: 30, active: false, score: 15 }
+];
+
+const tasks = [
+  { id: 101, title: "Refactor code",     priority: 3, estimatedHours: 5,   done: false },
+  { id: 102, title: "Write tests",       priority: 2, estimatedHours: 3,   done: false },
+  { id: 103, title: "Fix bug #231",      priority: 1, estimatedHours: 1,   done: true  },
+  { id: 104, title: "Design prototype",  priority: 1, estimatedHours: 8,   done: false },
+  { id: 105, title: "Update docs",       priority: 3, estimatedHours: 2,   done: false }
+];
+
+
+// ======================================================
+// SECTION 3 — CHALLENGE PROMPTS (20 TOTAL)
+// HYBRID STYLE: EVERY 5 PROMPTS = NEW CONCEPT TIER,
+// AND EACH TIER BUILDS TOWARD A LARGER CHALLENGE.
+// ======================================================
+//
+// IMPORTANT RULES FOR YOURSELF:
+// - Write all solutions below these comments.
+// - Do not modify the sample data declarations above.
+// - Avoid looking back at this reference as you advance.
+// - Use repetition to build intuition.
+
+
+// ------------------------------------------------------
+// TIER 1 (CHALLENGES 1–5): ARRAYS & BASIC ALGORITHMIC THINKING
+//   Focus: loops, indexing, simple transforms and summaries.
+// ------------------------------------------------------
+
+
+// Challenge 1 — Basic Array Inspection
+// A) Using the "numbers" array:
+//    - Get the first element.
+//    - Get the last element.
+//    - Get the total number of elements.
+// B) Use basic indexing and the .length property.
+// C) Reference reminder:
+//      numbers[0]
+//      numbers[numbers.length - 1]
+//      numbers.length
+
+
+// Challenge 2 — Sum of an Array
+// A) Compute the sum of all values inside "numbers".
+// B) Use a loop and an accumulator variable to track running total.
+// C) Reference reminder for a counting pattern:
+//      let total = 0;
+//      for (const value of array) {
+//        total = total + value;
+//      }
+
+
+// Challenge 3 — Filter Even Numbers
+// A) Create a new array containing only even numbers from "numbers".
+// B) You can use a loop and push values that meet a condition (value % 2 === 0).
+// C) Reference reminder for using .push:
+//      const result = [];
+//      result.push(value);
+
+
+// Challenge 4 — Transform Numbers (Double)
+// A) Create a new array where each number in "numbers" is doubled.
+// B) You can use a loop + push, or the .map method.
+// C) New concept refresher: map
+//      const doubled = numbers.map(n => n * 2);
+//    (You do not have to use arrow functions; standard function syntax is fine.)
+
+
+// Challenge 5 — Mini-Project: Numeric Summary
+// A) Using the "numbers" array, create an object summarizing:
+//      - smallest value
+//      - largest value
+//      - total sum
+//      - average (sum / count)
+// B) This is a small algorithm composed of multiple steps:
+//      - loop once over the array
+//      - track min, max, and sum as you go
+//      - compute average at the end
+// C) Reference reminder: initialize min and max from the first element:
+//      let min = numbers[0];
+//      let max = numbers[0];
+
+
+// ------------------------------------------------------
+// TIER 2 (CHALLENGES 6–10): OBJECTS, FREQUENCY MAPS, SETS
+//   Focus: key–value maps, counting, unique values, dictionary-style lookups.
+// ------------------------------------------------------
+
+
+// Challenge 6 — Word Frequency Map
+// A) Using the "words" array, build an object where keys are the words
+//    and values are how many times each word appears.
+// B) This is a classic "frequency counter" pattern.
+// C) Reference reminder:
+//      const freq = {};
+//      for (const value of words) {
+//        if (!freq[value]) {
+//          freq[value] = 0;
+//        }
+//        freq[value] += 1;
+//      }
+
+
+// Challenge 7 — Most Frequent Word
+// A) Using the frequency map you built in Challenge 6 (or recreate inside this task),
+//    find the word that appears most often and how many times it appears.
+// B) Loop over the keys of the frequency object and track the "best so far".
+// C) Reference reminder for looping keys:
+//      for (const key in freq) {
+//        const count = freq[key];
+//      }
+
+
+// Challenge 8 — Unique Words Using a Set
+// A) Create a Set containing all unique words from the "words" array.
+// B) Then convert that Set back into an array of unique words.
+// C) New concept refresher: Set
+//      const uniqueSet = new Set(words);
+//      const uniqueArray = Array.from(uniqueSet);
+
+
+// Challenge 9 — Group Users by Active Status
+// A) Using the "users" array, build an object with two keys: "active" and "inactive".
+//    Each key should map to an array of users with that status.
+// B) This is grouping by a property value (true/false).
+// C) Reference reminder:
+//      const groups = { active: [], inactive: [] };
+//      if (user.active) { groups.active.push(user); } else { groups.inactive.push(user); }
+
+
+// Challenge 10 — Mini-Project: Scoreboard Insights
+// A) Using the "users" array, create an object summarizing:
+//      - total number of users
+//      - number of active users
+//      - average score of active users
+//      - list (array) of names of inactive users
+// B) This combines counting, conditionals, and object-based summaries.
+// C) Hint: you can compute everything in a single loop over "users".
+
+
+// ------------------------------------------------------
+// TIER 3 (CHALLENGES 11–15): STACKS, QUEUES & SIMPLE WORKFLOWS
+//   Focus: modeling workflows as stacks/queues, using arrays as underlying storage.
+// ------------------------------------------------------
+
+
+// Challenge 11 — Implement a Simple Stack
+// A) Create an object or simple pattern that represents a stack of numbers.
+//    It should support at least these operations:
+//      - push(value)
+//      - pop()
+//      - peek()      // look at top without removing
+//      - isEmpty()
+// B) Use an array internally to hold the values, and think in terms of LIFO.
+// C) Reference reminder:
+//      // using push and pop on an internal array is a natural stack implementation.
+
+
+// Challenge 12 — Use the Stack: Reverse an Array
+// A) Using your stack from Challenge 11, write a function that takes an array
+//    (for example "numbers") and returns a new array with the elements reversed.
+// B) Algorithm idea:
+//      - push each element onto the stack
+//      - pop elements off the stack into a new array
+// C) This demonstrates LIFO behavior reversing order.
+
+
+// Challenge 13 — Implement a Simple Queue
+// A) Create a queue structure that supports at least:
+//      - enqueue(value)
+//      - dequeue()
+//      - peek()
+//      - isEmpty()
+// B) Use an array internally to hold values, and think in terms of FIFO (first in, first out).
+// C) Reminder: you can model enqueue as push, and dequeue as shift, or manage indices yourself.
+
+
+// Challenge 14 — Task Queue Simulation
+// A) Using your queue from Challenge 13 and the "tasks" array,
+//    simulate a processing queue:
+//      - enqueue all tasks
+//      - repeatedly dequeue a task and "process" it (e.g., by inspecting properties)
+// B) Decide on your own what "processing" means logically,
+//    such as counting total estimated hours processed.
+// C) Focus on the algorithm and behavior, not on logging.
+
+
+// Challenge 15 — Mini-Project: Undo / Redo Stack
+// A) Build two stacks to represent an "undo" and "redo" system for a text editor.
+//    Imagine each action is a string like "type A", "delete word", etc.
+//    Implement operations (conceptually):
+//      - performAction(action)   // adds new action to undo stack and clears redo stack
+//      - undo()                  // moves last action from undo stack to redo stack
+//      - redo()                  // moves last action from redo stack to undo stack
+// B) You can represent the actions as simple strings in arrays.
+// C) This models a real-world pattern using stacks (two stacks for undo/redo).
+
+
+// ------------------------------------------------------
+// TIER 4 (CHALLENGES 16–20): SORTING, SEARCHING & INTEGRATED ALGORITHMS
+//   Focus: array.sort, custom comparators, search logic, multi-step algorithms.
+// ------------------------------------------------------
+
+
+// Challenge 16 — Sort Numbers Ascending and Descending
+// A) Create two new arrays:
+//      - one with "numbers" sorted ascending
+//      - one with "numbers" sorted descending
+// B) Use array.sort with a compare function.
+// C) Reference reminder:
+//      const ascending = [...numbers].sort((a, b) => a - b);
+//      const descending = [...numbers].sort((a, b) => b - a);
+
+
+// Challenge 17 — Find Top N Users by Score
+// A) Using the "users" array, create a function that returns the top N users by score,
+//    where N is a parameter (for example, N = 3).
+// B) You can:
+//      - create a copy of the users array
+//      - sort it by score descending
+//      - return the first N users
+// C) Reference reminder for sorting by object property:
+//      usersCopy.sort((a, b) => b.score - a.score);
+
+
+// Challenge 18 — Binary Search on Sorted Numbers (Conceptual Implementation)
+// A) Using a sorted version of "numbers" (ascending),
+//    implement a binary search function that returns the index of a target value,
+//    or -1 if not found.
+// B) Binary search idea:
+//      - keep track of left and right indices
+//      - while left <= right:
+//          - compute middle
+//          - compare middle value to target
+//          - move left or right boundary
+// C) New concept refresher (pseudo-code):
+//      let left = 0;
+//      let right = sorted.length - 1;
+//      while (left <= right) {
+//        const mid = Math.floor((left + right) / 2);
+//        if (sorted[mid] === target) { ... }
+//        else if (sorted[mid] < target) { left = mid + 1; }
+//        else { right = mid - 1; }
+//      }
+
+
+// Challenge 19 — Prioritized Task Plan
+// A) Using the "tasks" array, build an algorithm that:
+//      - filters out tasks that are already done
+//      - sorts remaining tasks first by priority ascending (1 is highest),
+//        then by estimatedHours ascending
+//      - produces a final ordered array representing an ideal work plan
+// B) This combines filter + sort + multiple keys in comparator.
+// C) Reference reminder for multi-key sort (conceptual):
+//      if (a.priority !== b.priority) {
+//        return a.priority - b.priority;
+//      } else {
+//        return a.estimatedHours - b.estimatedHours;
+//      }
+
+
+// Challenge 20 — Final Mini-Project: User Task Dashboard Data
+// A) Combine multiple ideas (arrays, objects, frequency, sorting, filtering) into one algorithm.
+//    Using "users" and "tasks":
+//      - Consider only active users.
+//      - For each active user, create a summary object with:
+//          * userId
+//          * userName
+//          * totalScore (from users data)
+//          * assignedTasks: an array of tasks that this user might handle
+//            (you can make up a simple rule, e.g., match by index, or by some mapping you decide)
+//          * totalEstimatedHours for those assigned tasks
+//      - Then build a final array of these summaries and sort it by totalEstimatedHours descending.
+// B) You design the exact "assignment rule" from tasks to users, but it should be deterministic.
+//    Example ideas (pick one or invent your own):
+//      - assign tasks in order, round-robin across active users
+//      - assign tasks with highest priority to user with highest score
+//      - assign tasks by matching some property you derive
+// C) This challenge is intentionally open enough to force you to:
+//      - define a simple rule
+//      - use loops, conditions, arrays, objects
+//      - integrate several data-structure and algorithm ideas together.
+
+
+// ======================================================
+// END OF WORKSHEET
+// ======================================================

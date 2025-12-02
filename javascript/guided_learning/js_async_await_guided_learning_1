@@ -155,7 +155,7 @@ Concept: Async flows often depend on multiple sequential calls.
 Task:
   Create `getUser()`, `getPosts()`, `getComments()` with random delays, call them sequentially using `await`.
 
-
+ 
 4.4 — Parallel async
 ---------------------
 Concept: `Promise.all()` executes independent tasks concurrently.
