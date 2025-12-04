@@ -1,108 +1,37 @@
- // const res = await fetch(url);
- //  const data = await res.json();
 
-//Fetch a public API, log it
-const apiFetch = await fetch(url);
-console.log(apiFetch);
-const apiData = await res.json();
-console.log(apiData);
+const FetchGroup = async () => {
+	console.log(`Promise Loading at ${Date.now()}`)
+	return Promise.all([
+	fetch('https://nekos.best/api/v2/neko'),
+	fetch('https://nekos.best/api/v2/neko'),
+	fetch('https://nekos.best/api/v2/neko')
+	]);
+}
 
+async function NestedSequence() {
+	console.log(await FetchGroup());
+	await console.log(`Promise returned at ${Date.now()}`);
+}
 
-//Catch an error
+NestedSequence();
 
+try {
+	const dataObjectAll = []
+	const apiFetch = await fetch('https://nekos.best/api/v2/neko');
+	const apiData1 = await apiFetch.json();
+	dataObjectAll.push(...apiData1.results);
+	const apiFetch2 = await fetch('https://nekos.best/api/v2/neko')
+	const apiData2 = await apiFetch2.json();
+	dataObjectAll.push(...apiData2.results);
 
+// ----------- AUTO TABLE ---------- //
+let autoTable = []
+for (let i=0;i<dataObjectAll.length;i++){
+	autoTable.push(dataObjectAll[i]);
+};
+console.table(autoTable);
 
+} catch (error) {
+	console.log(error)
+}
 
-
-
-
-
-
-
-
-// // ---------------------------------------- //
-
-
-// //timeout threshold, in ms
-// const timeoutExpiration = 800
-
-// //random timeout generator
-// function fetchTime() {
-// 	return Math.floor(Math.random() * 1000);
-// }
-
-// //random value generator
-// function newRandomNum() {
-// 	return Math.random() * 12334;
-// }
-
-// // ---------------------------------------- //
-
-// //waterfall simulated API
-// async function waterfallFunction() {
-// 	const waterfallContents = [];
-// 	await waterfallA(waterfallContents);
-// 	await waterfallB(waterfallContents);
-// 	await waterfallC(waterfallContents);
-// 	return waterfallContents;
-// };
-
-// //Waterfall function A
-// async function waterfallA(waterfallContents) {
-// 	await new Promise(resolve => setTimeout(resolve, timeoutExpiration));
-// 	waterfallContents.push('A');
-// 	return waterfallContents;
-// };
-
-// //Waterfall function B
-// async function waterfallB(waterfallContents) {
-// 	await new Promise(resolve => setTimeout(resolve, timeoutExpiration));
-// 	waterfallContents.push('B');
-// 	return waterfallContents;
-// };
-
-// //Waterfall function C
-// async function waterfallC(waterfallContents) {	
-// 	await new Promise(resolve => setTimeout(resolve, timeoutExpiration));
-// 	waterfallContents.push('C');
-// 	return waterfallContents;
-// };
-
-// waterfallFunction().then(console.log);
-
-
-
-
-
-
-// // //function to get the data
-// // function APISimulator(name, email){
-// // 	return new Promise((resolve, reject) => {
-// // 		if (fetchTime() < timeoutExpiration) {
-// // 			resolve({
-// // 				name: name,
-// // 				email: email
-// // 			})
-// // 		} else {
-// // 			reject('API Fetch Failed')
-// // 		}
-// // 	})
-// // };
-
-// // //promise to get to data
-// // async function getAPI(name, email) {
-// // 	try {
-// // 		for (let i=0; i<3; i++){
-// // 			console.log(`attempt #${i}`);
-// // 			const resolvedData = await APISimulator(name, email);
-// // 			console.log(resolvedData);
-
-// // 		}
-// // 	} catch (error) {
-// // 		console.log(error)
-// // 	}
-// // };
-
-// // //call to get the data
-
-// // getAPI('John', 'JA@gmail.com');
