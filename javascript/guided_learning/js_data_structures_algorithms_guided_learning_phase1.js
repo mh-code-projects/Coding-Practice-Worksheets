@@ -4,7 +4,7 @@
 //
 // SECTION 1: REFERENCE — Quick Guide
 ///////////////////////////////////////////////////////////////
-
+/*
 //// Arrays
 // Purpose: Ordered lists of elements. Fast random access by index.
 // Common operations: push, pop, shift, unshift, slice, splice, index access.
@@ -41,7 +41,7 @@
 /// const queue = [];
 /// queue.push(x);   // enqueue
 /// queue.shift();   // dequeue
-
+*/
 
 ///////////////////////////////////////////////////////////////
 // SECTION 2: SAMPLE DATA (Use for exercises below)
@@ -63,13 +63,53 @@ const sampleNested  = [ [1,2], [3,4], [5,6] ];
 // 1) Challenge: Retrieve the second largest number in sampleNumbers.
 //    Make sure your approach works even if the array is not sorted.
 
+
+// If current < Highest, and if current > second, then make current second
+// if current > highest, make current the highest AND make the current highest the second
+// if current < highest AND second, skip it
+
+const findSecondLargest = (numberArray) => {
+	let largest = 0;
+	let secondLargest = 0;
+	for (let i=0; i < numberArray.length; i++) {
+		let current = numberArray[i]
+		if (current > largest && current > secondLargest) {			
+			secondLargest = largest
+			largest = current;
+		} else if ((current > secondLargest && current < largest ) ) {
+			secondLargest = current;
+		}
+	}
+	return secondLargest;
+}
+console.log(`Second largest: ${findSecondLargest(sampleNumbers)}`);
+
 // 2) Challenge: Create a new array containing only the even numbers
 //    from sampleNumbers.
+
+const onlyEven = (numberArray) => {
+	let evenNumbers = []
+	for (let i = 0; i < numberArray.length; i++) {
+		let current = numberArray[i];
+		if (current % 2 === 0) {
+			evenNumbers.push(current);
+		}
+	};
+	return evenNumbers;
+};
+console.log(`Only even numbers: ${onlyEven(sampleNumbers)}`);
 
 // 3) Challenge: Flatten sampleNested into a single array of numbers.
 //    New concept: Array flattening
 //    Example syntax:
 /// const flat = arr.flat();
+
+
+
+let newArray = []
+
+console.log(`Highest number is ${Math.max(...sampleNested.flat())}`);
+
 
 
 // 4) Challenge: Remove duplicate words from sampleWords while preserving order.
@@ -154,4 +194,3 @@ const sampleNested  = [ [1,2], [3,4], [5,6] ];
 //     When the queue reaches size 3, dequeue one element.
 //     Build an array representing the order items were released.
 //     Purpose: Understand real-world queue flow (stream processing).
-
