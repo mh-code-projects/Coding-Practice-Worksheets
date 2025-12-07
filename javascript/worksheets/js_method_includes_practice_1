@@ -1,0 +1,96 @@
+// ===========================================================
+// SECTION 1: Reference – Quick Guide for .includes() in JavaScript
+// ===========================================================
+
+// Purpose:
+// .includes() is used to check whether an array or string contains a specified value.
+// It returns true or false.
+
+// Syntax (Array):
+//    array.includes(searchValue, startIndex)
+// searchValue: the element you want to find.
+// startIndex: optional; where the search begins (default = 0).
+
+// Syntax (String):
+//    string.includes(searchValue, startIndex)
+
+// Example:
+//    const fruits = ["apple", "banana", "mango"];
+//    fruits.includes("banana");      // true
+//    fruits.includes("banana", 2);   // false (search starts at index 2)
+
+
+// ===========================================================
+// SECTION 2: Sample Data (use throughout the worksheet)
+// ===========================================================
+
+const colors = ["red", "blue", "green", "purple", "yellow"];
+const phrase = "learning JavaScript is powerful and fun";
+const shoppingList = ["milk", "eggs", "bread", "apples", "flour", "cheese"];
+const numbers = [10, 25, 40, 55, 70, 85, 100];
+const mixedData = ["task1", 42, true, "completed", 99, false];
+
+
+// ===========================================================
+// SECTION 3: Challenge Prompts
+// ===========================================================
+
+// -----------------------------------------------------------
+// 1) Basic Array Inclusion Check
+// A) Write code to check if "purple" exists in the colors array.
+// B) This reinforces the fundamental use of .includes() on arrays.
+
+
+// -----------------------------------------------------------
+// 2) String Inclusion Check
+// A) Check if the word "powerful" is included in the phrase string.
+// B) Demonstrates .includes() on strings, which behave similarly to arrays.
+
+
+// -----------------------------------------------------------
+// 3) Using the Optional startIndex Parameter
+// A) Check if "apples" exists in the shoppingList array *starting at index 3*.
+// B) startIndex allows more control over where your search begins and is useful when skipping sections of data.
+
+
+// -----------------------------------------------------------
+// 4) Conditional Logic with .includes()
+// A) Use .includes() to decide whether the numbers array contains any value greater than 60.
+// B) Introduce: The Array.prototype.some() method.
+//    Syntax:
+//        array.some(callback)
+//    Purpose: Check if at least one element satisfies a condition.
+// C) First, find a way to combine .some() and .includes() to determine if the numbers array includes any of the values in a separate reference array:
+//        const targets = [65, 70, 75];
+//    Hint: Think about using .some() to test each value in "targets" against "numbers.includes(...)".
+
+
+// -----------------------------------------------------------
+// 5) Checking Mixed Data Types
+// A) Determine whether mixedData includes the boolean value true.
+// B) Then check if mixedData includes the string "true". Compare the results.
+// C) This illustrates how .includes() uses strict equality (===) when matching values.
+
+
+// -----------------------------------------------------------
+// 6) Building Logic with Multiple Includes
+// A) Imagine you are validating user input. Create two arrays:
+//       const allowed = ["start", "stop", "pause", "resume"];
+//       const forbidden = ["delete", "format"];
+// B) Write logic that checks a provided command variable and determines whether it is allowed, forbidden, or unknown.
+// C) Reinforces how .includes() can guide branching logic and input validation.
+
+
+// -----------------------------------------------------------
+// 7) Using .includes() to Filter Data
+// A) Introduce: Array.prototype.filter()
+//    Syntax:
+//        array.filter(callback)
+//    Purpose: Creates a new array containing only the elements that pass the callback condition.
+// B) Using the shoppingList array, create a filtered list containing only items whose names *include* the letter "e".
+// C) This demonstrates combining .includes() (string-level) with .filter() (array-level) to build powerful data transformation patterns.
+
+
+// -----------------------------------------------------------
+// End of Worksheet
+// ===========================================================

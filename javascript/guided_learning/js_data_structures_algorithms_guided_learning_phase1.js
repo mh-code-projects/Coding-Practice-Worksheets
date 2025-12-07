@@ -82,7 +82,7 @@ const findSecondLargest = (numberArray) => {
 	}
 	return secondLargest;
 }
-console.log(`Second largest: ${findSecondLargest(sampleNumbers)}`);
+// console.log(`#1: Second largest: ${findSecondLargest(sampleNumbers)}`);
 
 // 2) Challenge: Create a new array containing only the even numbers
 //    from sampleNumbers.
@@ -97,26 +97,32 @@ const onlyEven = (numberArray) => {
 	};
 	return evenNumbers;
 };
-console.log(`Only even numbers: ${onlyEven(sampleNumbers)}`);
+// console.log(`#2: Only even numbers: ${onlyEven(sampleNumbers)}`);
 
 // 3) Challenge: Flatten sampleNested into a single array of numbers.
 //    New concept: Array flattening
 //    Example syntax:
 /// const flat = arr.flat();
 
-
-
-let newArray = []
-
-console.log(`Highest number is ${Math.max(...sampleNested.flat())}`);
-
-
+console.log(`#3: Highest number is ${
+	Math.max(...sampleNested.flat())
+}`);
 
 // 4) Challenge: Remove duplicate words from sampleWords while preserving order.
 //    No Set allowed for this challenge.
 //    Practice fundamental iteration and membership checks using arrays.
 
-
+const removeDuplicates = (array) => {
+	let withoutDuplicates = [];
+	for (let i = 0; i < array.length; i++) {
+		let currentWord = array[i];
+		if ((!array.includes(currentWord)) || (!withoutDuplicates.includes(currentWord))) {
+			withoutDuplicates.push(currentWord);
+		}
+	};
+	return withoutDuplicates;
+};
+// console.log(`#4: ${removeDuplicates(sampleWords)}`);
 
 ////////////////////////
 // HASH MAP CHALLENGES
@@ -124,6 +130,8 @@ console.log(`Highest number is ${Math.max(...sampleNested.flat())}`);
 
 // 5) Challenge: Using an Object as a frequency map,
 //    count how many times each word appears in sampleWords.
+
+
 
 // 6) Challenge: Build a lookup table from sampleNumbers
 //    where each key is a number and the value is true.

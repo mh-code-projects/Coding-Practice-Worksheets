@@ -29,20 +29,33 @@ const products = [
 // --- Challenge 1: Finding a Student ---
 // Goal: Find the student with an ID of 3.
 // Remember, `.find()` returns the entire object, not just a value.
+const studentFinder = students.find(student => (student.id === 3));
 
 // --- Challenge 2: Checking for Existence ---
 // Goal: Check if there is a product with the name "Keyboard".
 // Hint: You can use `.find()` for this! What does `.find()` return if it doesn't find a match?
+const keyboardFinder = products.find(product => (product.name === 'Keyboard'));
 
 // --- Challenge 3: Finding Based on a Condition ---
 // Goal: Find the first student who has a grade of "B".
 // What happens if there are multiple students with a grade of "B"?
 // How is `.find()` different from `.filter()` in this case?
 
+const studentBFinder = students.find(student => (student.grade === 'B'));
+
 // --- Challenge 4: Combining Conditions ---
 // Goal: Find a product that costs more than $50 and is in the "electronics" category.
 // Hint: You can use logical operators like `&&` (AND) inside your callback function.
 
+const expensiveElectronicsFinder = products.find(product => (product.category === 'electronics' && product.price > 50));
+
 // --- Challenge 5: Find a student by a function ---
 // Goal: Create a function that takes an ID and returns the student object.
 // This is a common pattern for creating reusable "lookup" functions.
+
+
+const findStudentById = (studentId) => {
+  const foundStudent = students.find(student => (student.id === studentId))
+  return foundStudent;
+}
+// console.log(findStudentById(3))
