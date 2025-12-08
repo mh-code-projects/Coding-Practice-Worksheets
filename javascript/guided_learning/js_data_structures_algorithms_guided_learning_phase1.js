@@ -131,7 +131,16 @@ const removeDuplicates = (array) => {
 // 5) Challenge: Using an Object as a frequency map,
 //    count how many times each word appears in sampleWords.
 
-
+let frequencyWords = {};
+for (let i=0; i<sampleWords.length; i++) {
+	let currentWord = sampleWords[i];
+	if (!frequencyWords[currentWord]){	// if currentWord not present in frequencyWords
+		frequencyWords[currentWord] = 1;
+	} else {                     
+		frequencyWords[currentWord] = frequencyWords[currentWord] + 1    //currentWord count ++
+	}
+};
+// console.table(frequencyWords);
 
 // 6) Challenge: Build a lookup table from sampleNumbers
 //    where each key is a number and the value is true.

@@ -65,24 +65,17 @@ C) 'statusMessage' should be "Active" if 'isActive' is true, or "Inactive" other
 D) Hint: Use the spread syntax {...user} to copy the original properties.
 */
 
-const userStatusArray = userProfiles.map(user =>  {
-
-})
-
-// const userStatusArray = userProfiles.map(user => [...user] {
-   
-   // userStatusArray += 
-//    //if statement to decide how to mark the new StatusMessage property
-//    //return completed user object
-});
-
-
+const newArrayWithStatus = userProfiles.map(user => {return {
+   ...user,
+   statusMessage: user.isActive ? 'Active' : 'Inactive'
+}});
 
 /*
  Challenge 4: Simple String Transformation (All Caps)
 A) Create a new array containing the 'name' of each user from 'userProfiles' converted to UPPERCASE.
 C) Reference: Use the .toUpperCase() string method.
 */
+
 
 
 /*
