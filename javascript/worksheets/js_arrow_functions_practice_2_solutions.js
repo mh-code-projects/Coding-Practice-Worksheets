@@ -90,13 +90,14 @@ const getCurrentTime = () => {
     const newDate = new Date()
     currentTime = (newDate.getHours());
     return currentTime;
- ;
 };
 
 // Prompt 4: Create an arrow function named 'createFullName' that takes the 'customer' object as its parameter.
 // B) The function should return a string that combines the 'firstName' and 'lastName' properties, separated by a space.
 // C) When returning an object literal (which you aren't doing here, but for reference): Returning an object literal directly in a concise body requires parentheses around the object: `() => ({ key: value })`.
-const createFullName = (customer) => `${customer.firstName} ${customer.lastName}`;
+
+const createFullName = (object) => (`${object.firstName} ${object.lastName}`);
+console.log(createFullName(customer))
 
 // Prompt 5: Create an arrow function named 'describeProduct' that takes one product object (from the 'products' array) as a parameter.
 // The function should return an object literal containing only the 'name' and 'price' of the product.
@@ -114,20 +115,30 @@ const describeProduct = (product) => ({
 // The new array should contain only the 'name' of each object in the 'products' array.
 // Your map callback function should be an arrow function.
 
-
+const productNames = products.map(product => ({
+    name: product.name,
+}));
 
 // Prompt 7: Use the **Array.prototype.filter()** method to create a new array named 'affordableProducts'.
 // The new array should contain only the products from the 'products' array that have a 'price' less than 50.
 // Your filter callback function should be an arrow function.
 
+const affordableProducts = products.filter(product => product.price < 50);
+
 // Prompt 8: Use the **Array.prototype.filter()** method to create a new array named 'inStockApparel'.
 // The new array should contain only the products that are both 'inStock: true' AND have the 'category: "Apparel"'.
 // This combines the use of filtering with logical operators (&& or ||).
+
+const inStockApparel = products.filter(product => product.inStock === true && product.category === 'Apparel');
 
 // Prompt 9: Use the **Array.prototype.map()** method to create a new array named 'salePrices'.
 // The new array should contain the prices of all products, but reduced by 10% (i.e., multiply the price by 0.9).
 // Use the concise body syntax for your map callback.
 
+const salesPrice = products.map(product => product.price * 0.9);
+
 // Prompt 10: Use the **Array.prototype.filter()** method and the **Array.prototype.map()** method **chained together** to create a new array named 'expensiveProductNames'.
 // First, filter the 'products' array to keep only the products with a price of 50 or more.
 // Second, map the resulting array to extract only the 'name' of those expensive products. This is a common and powerful pattern!
+
+const expensiveProductNames = products.filter(product => product.price > 50).map(product => product.name);
