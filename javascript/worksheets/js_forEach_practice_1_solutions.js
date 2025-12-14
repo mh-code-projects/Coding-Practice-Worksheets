@@ -64,7 +64,7 @@ Section 3: Challenge Prompts/Questions
 // Task: Use the forEach method on the 'customerNames' array to print a greeting
 // for each person. The greeting should be in the format: "Hello, [Name]!"
 customerNames.forEach(function(name){
-  console.log(name);
+  console.log(`Hello, ${name}`);
 });
 
 // ------------------------------------------------------------------------------
@@ -108,8 +108,8 @@ numbers.forEach(function(number){
 
 let totalInventoryValue = 0;
 inventory.forEach(function(item){
-totalInventoryValue = totalInventoryValue + (item.price * item.stock);
-console.log(totalInventoryValue);
+  totalInventoryValue = totalInventoryValue + (item.price * item.stock);
+  console.log(totalInventoryValue);
 });
 
 // ------------------------------------------------------------------------------
@@ -119,6 +119,13 @@ console.log(totalInventoryValue);
 // array to find all items where the 'stock' is less than 10. Add (push) these
 // items to the 'lowStockItems' array.
 
+let lowStockItems = [];
+inventory.forEach(function(item){
+  if (item.stock < 10) {
+    lowStockItems.push(item);
+  }
+}); 
+console.table(lowStockItems);
 
 // ------------------------------------------------------------------------------
 // Challenge 7: Counting Occurrences
@@ -129,6 +136,7 @@ console.log(totalInventoryValue);
 // New Concept: String Method 'startsWith()'
 // Syntax: string.startsWith(searchString) -> Returns true or false.
 // Example: "Apple".startsWith("A") // true
+
 
 
 // ------------------------------------------------------------------------------

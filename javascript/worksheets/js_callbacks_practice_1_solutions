@@ -81,6 +81,9 @@ function functionC(repeatTimes, functionD){
 // The callback should determine how the two numbers are handled.
 // Purpose: See how callbacks allow flexible logic without rewriting functions.
 
+function functionE(a, b, functionF){
+  functionF(a, b);
+};
 
 // -------------------------------------------------------
 // Challenge 4: Iteration Using Callbacks
@@ -89,6 +92,11 @@ function functionC(repeatTimes, functionD){
 // For each number, invoke a callback and pass the current number into it.
 // Purpose: Learn how callbacks are used to customize behavior during iteration.
 
+function iterateNumbers(callback){
+  for (let i=0;i < numbers.length; i++) {
+    callback(numbers[i]);
+  }
+};
 
 // -------------------------------------------------------
 // Challenge 5: Conditional Logic via Callbacks
@@ -99,6 +107,24 @@ function functionC(repeatTimes, functionD){
 // Purpose: Use callbacks to decouple decision-making from action.
 
 
+function functionA(a){
+  console.log('A');
+};
+
+function functionB(a){
+  console.log('B');
+}
+
+function userFunction(user, functionA, functionB){
+  if (user.name != null) {
+    functionA(user);
+  } else {
+    functionB(user);
+  }
+};
+// userFunction(users[0], functionA, functionB);
+
+
 // -------------------------------------------------------
 // Challenge 6: Asynchronous Callback Simulation
 // -------------------------------------------------------
@@ -106,6 +132,11 @@ function functionC(repeatTimes, functionD){
 // After a delay, invoke a callback passed into the function.
 // Purpose: Understand why callbacks are critical for async operations.
 
+const waitingFunction = () => {
+  setTimeout(() => {
+    console.log('waiting');
+  }, 3000)
+}
 
 // -------------------------------------------------------
 // Challenge 7: Building a Reusable Processor (Multi-Step)
@@ -115,6 +146,23 @@ function functionC(repeatTimes, functionD){
 // C) Reuse this function with different callbacks to perform different actions.
 // Purpose: See how callbacks enable powerful abstraction and reuse.
 
+function deleteUser(user){
+  console.log(`${user.name} deleted`);
+};
+
+function addNewUser(user){
+  console.log(`${user.name} added`);
+};
+
+function usersCallbackCaller(users, usersCallbackCalled){
+  for (let i=0;i<users.length;i++){
+    let user = users[i];
+    usersCallbackCalled(user)
+  }
+}
+
+usersCallbackCaller(users, deleteUser);
+usersCallbackCaller(users, addNewUser);
 
 // -------------------------------------------------------
 // Challenge 8: Callback Composition
