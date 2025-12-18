@@ -61,6 +61,7 @@ productsInCart.push("Monitor", "Webcam", "Webcam");
 // 5. Simulating 'Clear Last Action'
 //    a) The user wants to clear the most recent action logged in `userActions`. Use pop() to remove it.
 //    b) What is the returned value of the pop() operation? (No code, just state the value).
+const poppedAction = userActions.pop();
 
 // 6. Implementing Undo (Setup)
 //    a) The user performs an action: "Deleted File X". Use push() to add this action to the `undoStack`.

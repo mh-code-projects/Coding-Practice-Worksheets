@@ -137,7 +137,13 @@ console.table(lowStockItems);
 // Syntax: string.startsWith(searchString) -> Returns true or false.
 // Example: "Apple".startsWith("A") // true
 
-
+let countA = 0
+customerNames.forEach(function(name){
+  if (name.startsWith('A')){
+    countA+=1;
+  }
+})
+console.log(countA);
 
 // ------------------------------------------------------------------------------
 // Challenge 8: Using the Third Parameter ('array')
