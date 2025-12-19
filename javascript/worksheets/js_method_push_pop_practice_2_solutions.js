@@ -40,41 +40,55 @@ let productsInCart = ["Laptop", "Mouse", "Keyboard"]; // Shopping cart items
 // 1. New Page Visit
 //    a) The user visits "amazon.com". Add this new page to the end of `browserHistory` using push().
 //    b) Store the new length of the array in a variable named `historyCount`.
+
 const historyCount = (browserHistory.push("amazon.com"));
 
 // 2. Going Back (Undo)
 //    a) The user hits the "Back" button. Use pop() to remove the last visited page from `browserHistory`.
 //    b) Store the URL of the removed page in a variable called `lastVisitedPage`.
+
 const lastVisitedPage = (browserHistory.pop());
 
 // 3. Saving a Draft
 //    a) A user starts a new email draft: "Subject: Important Update". Use push() to add this string to the `draftEmails` array.
 //    b) Another draft is started: "Subject: Follow-up". Add this one to the array as well.
+
 const draftCount = (draftEmails.push("Subject: Important Update"));
 draftEmails.push("Subject: Follow Up");
 
 // 4. Complex Item Added to Cart
 //    a) A user adds a new item: "Monitor". Use push() to add "Monitor" to the `productsInCart` array.
 //    b) Now, a user adds multiple of the same item: "Webcam" and another "Webcam". Add both with a single push() call.
+
 productsInCart.push("Monitor", "Webcam", "Webcam");
 
 // 5. Simulating 'Clear Last Action'
 //    a) The user wants to clear the most recent action logged in `userActions`. Use pop() to remove it.
 //    b) What is the returned value of the pop() operation? (No code, just state the value).
+
 const poppedAction = userActions.pop();
 
 // 6. Implementing Undo (Setup)
 //    a) The user performs an action: "Deleted File X". Use push() to add this action to the `undoStack`.
 //    b) The user performs another action: "Renamed Folder Y". Add this to the `undoStack` as well.
 
+const action1 = 'Delete file X';
+undoStack.push(action1);
+const action2 = 'Rename Folder Y';
+undoStack.push(action2);
+
 // 7. Executing the Undo Command
 //    a) The user clicks "Undo". Use pop() to retrieve the last action from the `undoStack` that needs to be reversed.
 //    b) Store the returned action string in a variable named `actionToReverse`.
+
+let actionToReverse = undoStack.pop();
 
 // 8. Bulk Processing
 //    a) The server successfully processes all pending drafts. Write a while loop that uses pop() to clear all items from the `draftEmails` array.
 //    b) Inside the loop, push() the returned value of each pop() operation into a new array named `sentEmails`.
 //       Syntax: `while (array.length > 0) { ... }`
+
+
 
 // 9. Fixed-Size Log (Important Concept!)
 //    Goal: The `userActions` array should never hold more than 5 actions (it is a rolling history).

@@ -10,58 +10,68 @@ Each worksheet starts with the concept basics, and progressively gets more chall
 - Worksheets also run standalone in Node: `node javascript/worksheets/js_basics_practice_1.js`.
 - No build step required. Everything is plain HTML/CSS/JS and a few `.sql` files.
 
-## Worksheet Guide
-- Basics
-- If/else
-- Switch
-- Ternary operator
-- Logical OR
-- For loops
-- For...in
-- For...of
-- forEach
-- While loops
-- Do...while
-- Arrays
-- Arrays + Objects
-- Nested data
-- Spread
-- Rest
-- Optional chaining
-- Destructuring
-- Arrow functions
-- Callbacks
-- Method.call
-- Classes
-- Constructors/new
-- Recursive functions
-- Math.floor
-- Map
-- Filter
-- Reduce
-- Find
-- Includes/IndexOf
-- Join
-- Sort
-- Push/Pop
-- Shift/Unshift
-- GroupBy
-- Date/Time
-- toFixed
-- Misc array methods
-- Async/await
-- Promises basics
-- Fetch/API
-- Debugging basics
-- Debugger practice
-- Final practice drills
-- Data structures & algorithms phases
-- DOM/browser exercises
-- SQL basics
-
 ## Tips
 - Tackle a worksheet and then compare with the paired solution file (e.g., `js_method_map_practice_1.js` and `js_method_map_practice_1_solutions.js`).
 - Keep console open when using the browser pages to see logged results or errors.
 - Need a new drill? Duplicate an existing worksheet in the same folder to keep the format consistent.
 
-More is coming soon.
+Constantly adding more!
+
+## Worksheet Guide (grouped from `javascript/worksheets/`)
+- **Basics & Control Flow**
+  - Basics
+  - If/else
+  - Switch
+  - Ternary operator
+  - Logical OR
+  - Typeof
+- **Loops**
+  - For loops
+  - For...in
+  - For...of
+  - forEach
+  - While loops
+  - Do...while
+- **Arrays & Objects**
+  - Arrays
+  - Arrays + Objects
+  - Nested data
+  - Spread
+  - Rest
+  - Optional chaining
+  - Destructuring
+- **Array Methods**
+  - Map
+  - Filter
+  - Reduce
+  - Find
+  - Includes
+  - IndexOf + Includes
+  - Join
+  - Sort
+  - Push/Pop
+  - Shift/Unshift
+  - GroupBy
+  - Date/Time
+  - toFixed
+  - Misc array methods
+- **Numbers & Utilities**
+  - Math.floor
+- **Functions & Classes**
+  - Arrow functions
+  - Callbacks
+  - Method.call
+  - Classes
+  - Constructors/new
+  - Recursive functions
+- **Async & APIs**
+  - Async/await
+  - Promises basics
+  - Fetch/API
+- **Debugging**
+  - Debugging basics
+  - Debugger practice
+- **Capstone / Mixed**
+  - Final practice drill
+
+

@@ -64,7 +64,7 @@ Section 3: Challenge Prompts/Questions
 // Task: Use the forEach method on the 'customerNames' array to print a greeting
 // for each person. The greeting should be in the format: "Hello, [Name]!"
 customerNames.forEach(function(name){
-  console.log(`Hello, ${name}`);
+  // console.log(`Hello, ${name}`);
 });
 
 // ------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ customerNames.forEach(function(name){
 // message that includes its position (index) in the array.
 // Example for the first number: "Value at position 0 is 10"
 numbers.forEach(function(number, index){
-  console.log(`Value at position ${index} is ${number}`);
+  // console.log(`Value at position ${index} is ${number}`);
 })
 
 // ------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ numbers.forEach(function(number, index){
 // print its name and its price.
 // Example for the first item: "Laptop costs $1200"
 inventory.forEach(function(item){
-  console.log(`${item.name} costs $${item.price}`);
+  // console.log(`${item.name} costs $${item.price}`);
 });
 
 // ------------------------------------------------------------------------------
@@ -95,8 +95,8 @@ inventory.forEach(function(item){
 // callback function.
 numbers.forEach(function(number){
   if (number > 20) {
-    console.log(number);
-  };
+    // console.log(number);
+  }
 });
 
 // ------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ numbers.forEach(function(number){
 let totalInventoryValue = 0;
 inventory.forEach(function(item){
   totalInventoryValue = totalInventoryValue + (item.price * item.stock);
-  console.log(totalInventoryValue);
+  // console.log(totalInventoryValue);
 });
 
 // ------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ inventory.forEach(function(item){
     lowStockItems.push(item);
   }
 }); 
-console.table(lowStockItems);
+// console.table(lowStockItems);
 
 // ------------------------------------------------------------------------------
 // Challenge 7: Counting Occurrences
@@ -143,7 +143,7 @@ customerNames.forEach(function(name){
     countA+=1;
   }
 })
-console.log(countA);
+// console.log(countA);
 
 // ------------------------------------------------------------------------------
 // Challenge 8: Using the Third Parameter ('array')
@@ -154,6 +154,9 @@ console.log(countA);
 // and find its length.
 // Example for the first number: "10 is item 1 of 8 total."
 
+numbers.forEach(function(number, index, numbers){
+  // console.log(`${number} is ${index + 1} of ${numbers.length} total`);
+});
 
 // ------------------------------------------------------------------------------
 // Challenge 9: Formatting Output
@@ -163,6 +166,15 @@ console.log(countA);
 //
 // You will need an external variable (e.g., 'itemListString') initialized to an
 // empty string. Remember to handle the final comma if you want a clean list!
+
+let itemListString = '';
+inventory.forEach(function(item, index, inventory){
+  itemListString += item.name;
+  if (index < inventory.length - 1) {
+    itemListString += ', ';
+  } 
+});
+// console.log(itemListString);
 
 
 // ------------------------------------------------------------------------------
