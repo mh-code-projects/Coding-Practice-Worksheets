@@ -13,7 +13,6 @@ Each worksheet starts with the concept basics, and progressively gets more chall
 ## Tips
 - Tackle a worksheet and then compare with the paired solution file (e.g., `js_method_map_practice_1.js` and `js_method_map_practice_1_solutions.js`).
 - Keep console open when using the browser pages to see logged results or errors.
-- Need a new drill? Duplicate an existing worksheet in the same folder to keep the format consistent.
 
 Constantly adding more!
 
