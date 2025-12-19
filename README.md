@@ -59,6 +59,8 @@ Constantly adding more!
 - **Functions & Classes**
   - Arrow functions
   - Callbacks
+  - Scope & closures
+  - Factory functions
   - Method.call
   - Classes
   - Constructors/new
@@ -72,5 +74,4 @@ Constantly adding more!
   - Debugger practice
 - **Capstone / Mixed**
   - Final practice drill
-
 
