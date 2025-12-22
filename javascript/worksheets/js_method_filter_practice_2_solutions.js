@@ -52,12 +52,7 @@ const permissionsConfig = {
 // =======================================================
 
 // -------------------------------------------------------
-// Challenge 1: Basic Filtering with currentValue
-// -------------------------------------------------------
-// Use filter to create a new array containing only numbers
-// greater than 10 from the numbers array.
-// Focus only on currentValue in the callback.
-
+c
 
 // -------------------------------------------------------
 // Challenge 2: Using index for conditional logic
