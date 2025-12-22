@@ -104,15 +104,18 @@ Focus:
 Recognizing that factory functions create new object instances every time.
 */
 
-function multipleUsersFactory() {
-  usersData.forEach((user) => {
-    return{
-      name: name,
-      role: role,
-      active: active
+function multipleUsersFactory(usersData) {
+  let newData = []
+  usersData.forEach(function(user) {
+    return {
+      item: item,
+      quantity: quantity
     }
   })
 };
+
+console.log(multipleUsersFactory());
+
 
 /*
 Challenge 3: Encapsulating Private State with Closures

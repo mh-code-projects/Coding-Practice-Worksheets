@@ -55,27 +55,18 @@ CHALLENGE 1:
 Create three separate user objects using object literals.
 */
 
-let object1 = {name: 'Name1', number: 20};
-let object2 = {name: 'Name2', number: 20};
-let object3 = {name: 'Name3', number: 20};
 
 /*
 CHALLENGE 2:
 Add the same new property to all three objects.
 */
 
-object1.color = 'blue';
-object2.color = 'red';
-object3.color = 'green';
 
 /*
 CHALLENGE 3:
 Change the structure of one object and align the others.
 */
 
-object1.size = 'large';
-object2.size = 'medium';
-object3.size = 'small';
 
 /* ------------------------------------------------------------
 LEARNING GOAL 2: BASIC CONSTRUCTOR CREATION
@@ -85,8 +76,6 @@ LEARNING GOAL 2: BASIC CONSTRUCTOR CREATION
 CHALLENGE 4:
 Create a User constructor with username, role, and active properties.
 */
-
-function userConstructor
 
 
 /*
