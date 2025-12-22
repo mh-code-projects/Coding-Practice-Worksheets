@@ -169,10 +169,6 @@ New Concept:
 - Closures capture variables, not snapshots
 - Block scoping can prevent common bugs
 
-Syntax Reminder:
-for (let i = 0; i < something; i++) {
-  // block-scoped variable
-}
 ------------------------------------------------------------ */
 
 

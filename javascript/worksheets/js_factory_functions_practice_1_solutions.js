@@ -76,7 +76,18 @@ Focus:
 Understanding how a function can return an object with data and behavior.
 */
 
+function userFactory(name, role) {
+  return {
+    name: name,
+    role: role,
+    description(){
+      console.log(`${this.name}'s role is ${this.role}`)
+    }
+  }
+};
 
+let makeMike = userFactory('Mike', 'admin');
+makeMike.description();
 
 /*
 Challenge 2: Multiple Objects from One Factory
@@ -93,6 +104,15 @@ Focus:
 Recognizing that factory functions create new object instances every time.
 */
 
+function multipleUsersFactory() {
+  usersData.forEach((user) => {
+    return{
+      name: name,
+      role: role,
+      active: active
+    }
+  })
+};
 
 /*
 Challenge 3: Encapsulating Private State with Closures
